@@ -16,6 +16,6 @@ Dans l'ordre décroissant de priorité :
 
 # Dessin du site
 
-!! Zone en constructino, ceci est juste un brouillon : !!
+!! Zone en constructino, ceci est juste un brouillon !!
 
 ![Brouillon](Brouillon.jpeg "Un brouillon")

@@ -26,10 +26,6 @@ Route::get('/hello', function () {
     echo 'Hello world from echo';
 });
 
-Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
-    return "Hello $prenom $nom";
-});
-
 Route::get('/listePokemons', function () {
     return 'Liste des pokémons';
 });
@@ -52,6 +48,12 @@ Route::get('/mauvaiseFacon', function () {
 
 Route::get('/listePokemonsView', function () {
     return view('listePokemons');
+});
+
+Route::get('/listePokemonsController/{param?}', 'App\Http\controllers\listePokemonsController@getListePokemons');
+
+Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
+    return "Hello $prenom $nom";
 });
 
 Route::get('/{title}', function ($title) {

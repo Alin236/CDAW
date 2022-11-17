@@ -30,7 +30,7 @@ Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
     return "Hello $prenom $nom";
 });
 
-Route::get('/listePokemon', function () {
+Route::get('/listePokemons', function () {
     return 'Liste des pokémons';
 });
 
@@ -50,7 +50,7 @@ Route::get('/mauvaiseFacon', function () {
 ';
 });
 
-Route::get('/listePokemonV2', function () {
+Route::get('/listePokemonsView', function () {
     return view('listePokemons');
 });
 

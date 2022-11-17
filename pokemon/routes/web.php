@@ -50,6 +50,10 @@ Route::get('/mauvaiseFacon', function () {
 ';
 });
 
+Route::get('/listePokemonV2', function () {
+    return view('listePokemons');
+});
+
 Route::get('/{title}', function ($title) {
     return "Film : $title";
 })->where('title', '[a-zA-Z ]+');

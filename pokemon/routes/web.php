@@ -29,3 +29,7 @@ Route::get('/hello', function () {
 Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
     return "Hello $prenom $nom";
 });
+
+Route::get('/{title}', function ($title) {
+    return "Film : $title";
+})->where('title', '[a-zA-Z ]+');

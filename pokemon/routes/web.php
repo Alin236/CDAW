@@ -30,6 +30,10 @@ Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
     return "Hello $prenom $nom";
 });
 
+Route::get('/listeFilms', function () {
+    return 'Liste des films';
+});
+
 Route::get('/{title}', function ($title) {
     return "Film : $title";
 })->where('title', '[a-zA-Z ]+');

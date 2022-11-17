@@ -19,11 +19,11 @@ Route::get('/', function () {
 });
 */
 Route::get('/', function () {
-    return 'Hello world from route';
+    return 'Hello world from return';
 });
 
 Route::get('/hello', function () {
-    return view('helloWorld');
+    echo 'Hello world from echo';
 });
 
 Route::get('/{prenom}/{nom}', function ($prenom, $nom) {

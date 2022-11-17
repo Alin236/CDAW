@@ -25,3 +25,7 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return view('helloWorld');
 });
+
+Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
+    return "Hello $prenom $nom";
+});

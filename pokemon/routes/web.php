@@ -34,6 +34,22 @@ Route::get('/listeFilms', function () {
     return 'Liste des films';
 });
 
+Route::get('/mauvaiseFacon', function () {
+    return
+'
+<!doctype html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <title>Mauvaise façon</title>
+  </head>
+  <body>
+      <p>Le fichier risque d\'être longggggg</p>
+  </body>
+</html>
+';
+});
+
 Route::get('/{title}', function ($title) {
     return "Film : $title";
 })->where('title', '[a-zA-Z ]+');

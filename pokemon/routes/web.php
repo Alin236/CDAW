@@ -30,8 +30,8 @@ Route::get('/{prenom}/{nom}', function ($prenom, $nom) {
     return "Hello $prenom $nom";
 });
 
-Route::get('/listeFilms', function () {
-    return 'Liste des films';
+Route::get('/listePokemon', function () {
+    return 'Liste des pokémons';
 });
 
 Route::get('/mauvaiseFacon', function () {

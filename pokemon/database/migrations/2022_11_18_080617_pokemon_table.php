@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pokemon', function (Blueprint $table) {
+            $table->engine = 'innoDB';
             $table->id();
             $table->foreignId('energy_id')
                 ->references('id')

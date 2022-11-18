@@ -22,6 +22,13 @@ class EnergySeeder extends Seeder
             ]);
         */
         //Etape 2
-        \App\Models\Energy::factory(10)->create();
+        //\App\Models\Energy::factory(10)->create();
+
+        $limit = 10;
+        $url = "https://pokeapi.co/api/v2/type?limit=$limit";
+        $jsonResults = json_decode(file_get_contents($url))->results;
+        for($i=1; $i<=Count($jsonResults); $i++){
+            DB::table('energy')->insert(['id' => $i, 'name' => $jsonResults[$i-1]->name]);
+        }
     }
 }

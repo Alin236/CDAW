@@ -15,7 +15,8 @@ class PokemonSeeder extends Seeder
      */
     public function run()
     {
-        $pokemonJsonResults = json_decode(file_get_contents('https://pokeapi.co/api/v2/pokemon'))->results;
+        $url = 'https://pokeapi.co/api/v2/pokemon?limit=50';
+        $pokemonJsonResults = json_decode(file_get_contents($url))->results;
         for($i=1; $i<=Count($pokemonJsonResults); $i++){
             DB::table('pokemon')->insert(['id' => $i, 'energy'=> rand(1, 10), 'name' => $pokemonJsonResults[$i-1]->name, 'pv_max' => rand(20,30), 'level' => rand(1,10), 'path' => "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png"]);
         }

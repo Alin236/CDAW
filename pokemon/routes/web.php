@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function () {
-
+    Route::get('/pokedex', 'App\Http\controllers\PokemonController@index');
 });
 
 Route::prefix('/decouverteDeLaravel')->group(function () {

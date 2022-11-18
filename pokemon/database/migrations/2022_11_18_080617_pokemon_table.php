@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('pokemon', function (Blueprint $table) {
             $table->engine = 'innoDB';
             $table->id();
-            $table->foreignId('energy_id')
+            $table->foreignId('energy')
                 ->references('id')
                 ->on('energy')
                 ->onUpdate('restrict')

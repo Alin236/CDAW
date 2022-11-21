@@ -9,3 +9,20 @@
         $('#myTable').DataTable();
     });
 </script>
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>Id</th>
+		<th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+		<?php
+            $i=1;
+            foreach($json->results as $pokemon){
+                echo "<tr><td>$i</td><td>$pokemon->name</td></tr>";
+                $i++;
+            }
+	    ?>
+    </tbody>
+</table>

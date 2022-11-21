@@ -1,1 +1,3 @@
-alert("Number One");
+function mafonction(){
+    alert("Number One");
+}

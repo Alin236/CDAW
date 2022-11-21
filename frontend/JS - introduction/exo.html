@@ -3,3 +3,17 @@
 <script src="js.js" defer></script>
 <script src="js0.js" defer></script>
 <p>L'alerte entourée par le mot clef function ne s'est pas lancée</p>
+<p>On appelle le code contenu dans la fonction en utilisant</p>
+<p>
+    '''
+    document.addEventListener("DOMContentLoaded", function() {
+        mafonction();
+    });
+    '''
+</p>
+<p>dans une balise script</p>
+<script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+        mafonction();
+    });
+</script>

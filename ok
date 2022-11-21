@@ -1,0 +1,36 @@
+[1mdiff --git a/frontend/exercice.php b/frontend/exercice.php[m
+[1mindex 0be984b..6f8d2aa 100644[m
+[1m--- a/frontend/exercice.php[m
+[1m+++ b/frontend/exercice.php[m
+[36m@@ -1,18 +1,14 @@[m
+ <?php[m
+     $json = json_decode(file_get_contents('https://pokeapi.co/api/v2/pokemon'));[m
+ ?>[m
+[31m-[m
+[31m-<table>[m
+[31m-    <thead>[m
+[31m-        <tr>[m
+[31m-            <th>Name</th>[m
+[31m-        </tr>[m
+[31m-    </thead>[m
+[31m-    <tbody>[m
+[31m-		<?php[m
+[31m-            foreach($json->results as $pokemon){[m
+[31m-                echo "<tr><td>$pokemon->name</td></tr>";[m
+[31m-            }[m
+[31m-	    ?>[m
+[31m-    </tbody>[m
+[31m-</table>[m
+\ No newline at end of file[m
+[32m+[m[32m<link rel="stylesheet" href="cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">[m
+[32m+[m[32m<script src="cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>[m
+[32m+[m[32m<table id="myTable">[m
+[32m+[m[32m</table>[m
+[32m+[m[32m<script>[m
+[32m+[m[32m    $(document).ready( function () {[m
+[32m+[m[32m        $('#myTable').DataTable([m
+[32m+[m[32m            data: <?php $json->results ?>[m
+[32m+[m[32m        );[m
+[32m+[m[32m    });[m
+[32m+[m[32m</script>[m
+\ No newline at end of file[m

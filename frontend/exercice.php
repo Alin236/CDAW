@@ -1,18 +1,14 @@
 <?php
     $json = json_decode(file_get_contents('https://pokeapi.co/api/v2/pokemon'));
 ?>
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-		<?php
-            foreach($json->results as $pokemon){
-                echo "<tr><td>$pokemon->name</td></tr>";
-            }
-	    ?>
-    </tbody>
+<link rel="stylesheet" href="cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+<script src="cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<table id="myTable">
 </table>
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable(
+            data: <?php $json->results ?>
+        );
+    });
+</script>

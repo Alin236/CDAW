@@ -1,3 +1,4 @@
+'use strict';
 function mafonction(){
     alert("Number One");
 }

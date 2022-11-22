@@ -24,7 +24,7 @@ class EnergySeeder extends Seeder
         //Etape 2
         //\App\Models\Energy::factory(10)->create();
 
-        $limit = 10;
+        $limit = NULL;
         $url = "https://pokeapi.co/api/v2/type?limit=$limit";
         $jsonResults = json_decode(file_get_contents($url))->results;
         for($i=1; $i<=Count($jsonResults); $i++){

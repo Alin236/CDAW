@@ -3,13 +3,15 @@
 
 # Jalon 2
 
-Après avoir compris le fonctionnement MVC de Laravel, nous allons créer une route appelant un controller afin d'afficher une view montrant la liste des Pokémons (avec leur énergie) contenu dans la base de donnée
+Après avoir compris le fonctionnement MVC de Laravel, on va créer une route appelant un controller afin d'afficher une view montrant la liste des Pokémons (avec leur énergie) contenu dans la base de donnée.
+
+On va ensuite utilisé une DataTable pour afficher cette liste de Pokémons.
 
 Fonctionnalités implémentées :
 - Affichage de Pokémons avec leur énergie dans un tableau (Bestiaire)
 
 Méthode pour initialiser la base de données :
-Par les migrations / seeders
+Par les migrations / seeders.
 '''
 php artisan migrate:fresh --seed
 '''

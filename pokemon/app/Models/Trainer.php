@@ -12,4 +12,9 @@ class Trainer extends Model
     protected $table = 'trainer';
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
+
+    public function energies()
+    {
+        return $this->belongsToMany(Energy::class, 'maitrise', 'id_trainer', 'id_energy');
+    }
 }

@@ -34,4 +34,9 @@ class Energy extends Model
     { 
         return $this->hasMany(Pokemon::class); 
     }
+
+    public function trainers()
+    {
+        return $this->belongsToMany(Trainer::class, 'maitrise', 'id_energy', 'id_trainer');
+    }
 }

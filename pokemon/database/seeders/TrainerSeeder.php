@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use App\Models\Trainer;
 
 class TrainerSeeder extends Seeder
 {
@@ -17,6 +17,6 @@ class TrainerSeeder extends Seeder
     {
         DB::table('trainer')->insert(['pseudo' => 'Alin', 'password' => 'admin', 'mail' => 'alin@mail.com', 'level' => 9]);
         DB::table('trainer')->insert(['pseudo' => 'Pinky', 'password' => 'admin', 'mail' => 'pinky@mail.com', 'level' => 9]);
-        \App\Models\Trainer::factory(8)->create();
+        Trainer::factory(8)->create();
     }
 }

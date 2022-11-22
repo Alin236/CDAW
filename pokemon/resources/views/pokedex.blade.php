@@ -26,12 +26,11 @@
             @endforeach
         </tbody>
     </table>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+@endsection
+
+@section('javascript')
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready( function () {
-            $('#pokedex').DataTable();
-        });
+    <script type="text/javascript" src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/pokedex.js') }}">
     </script>
 @endsection

@@ -16,15 +16,24 @@ return new class extends Migration
         Schema::create('pokemon', function (Blueprint $table) {
             $table->engine = 'innoDB';
             $table->id();
-            $table->foreignId('energy')
-                ->references('id')
-                ->on('energy')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
             $table->string('name');
             $table->integer('pv_max');
             $table->integer('level');
+            $table->integer('attack');
+            $table->integer('special_attack');
+            $table->integer('special_defense');
             $table->string('path');
+            $table->foreignId('id_evolution')
+                ->nullable()
+                ->references('id')
+                ->on('pokemon')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+            $table->foreignId('energy')
+                ->references('id')
+                ->on('energy')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
             $table->timestamps();
         });
     }

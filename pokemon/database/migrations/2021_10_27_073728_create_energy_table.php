@@ -17,6 +17,7 @@ class CreateEnergyTable extends Migration
             $table->engine = 'innoDB';
             $table->id();
             $table->string('name');
+            $table->string('color')->default('fuchsia');
             $table->timestamps();
         });
     }

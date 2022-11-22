@@ -28,7 +28,7 @@ class PokemonSeeder extends Seeder
                     'special_attack'=> rand(1, 10),
                     'special_defense'=> rand(1, 10),
                     'path' => "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$i.png",
-                    'energy'=> rand(1, 10),
+                    'energy_id'=> rand(1, 10),
                 ]);
         }
     }

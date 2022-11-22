@@ -30,4 +30,8 @@ class Pokemon extends Model
      */
     protected $connection = 'mysql';
 
+    public function energy()
+    { 
+        return $this->belongsTo(Energy::class, 'energy_id'); 
+    }
 }

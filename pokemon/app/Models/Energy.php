@@ -29,4 +29,9 @@ class Energy extends Model
      * @var string
      */
     protected $connection = 'mysql';
+
+    public function pokemons() 
+    { 
+        return $this->hasMany(Pokemon::class); 
+    }
 }

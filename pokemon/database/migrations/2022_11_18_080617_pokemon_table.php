@@ -29,7 +29,7 @@ return new class extends Migration
                 ->on('pokemon')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
-            $table->foreignId('energy')
+            $table->foreignId('energy_id')
                 ->references('id')
                 ->on('energy')
                 ->onUpdate('cascade')

@@ -5,7 +5,7 @@
 
 !! Description !!
 
-![MCD et MLD](MCD et MLD.png "MCD et MLD.png")
+![MCD_et_MLD](MCD_et_MLD.png "Le MCD et MLD")
 
 Fonctionnalités implémentées :
 - Migrations

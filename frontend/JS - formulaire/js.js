@@ -2,7 +2,7 @@
 
 function modify(e)
 {
-    document.forms.myForm[0].innerHTML = e.srcElement.parentElement.children[1].innerHTML
+    document.forms.myForm[0].innerHTML = e.srcElement.parentElement.children[1].innerHTML;
 }
 
 function deleter(e)
@@ -28,3 +28,11 @@ function initBouton(){
     Array.from(remover).forEach(m => m.addEventListener("click",deleter));
 }
 initBouton();
+
+document.forms.myForm.addEventListener("submit", function(event){
+    let comment = event.currentTarget.elements[0].value;
+    if(comment == ''){
+        event.preventDefault();
+        document.getElementById('message').innerHTML = "Message non valide";
+    }
+});

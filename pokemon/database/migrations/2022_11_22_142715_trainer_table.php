@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('trainer', function (Blueprint $table) {
+            $table->engine = 'innoDB';
             $table->id();
             $table->string('pseudo');
             $table->string('password');

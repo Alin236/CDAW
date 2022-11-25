@@ -2,8 +2,9 @@
 
 function modify(e)
 {
-    document.forms.myForm[0].innerHTML = e.srcElement.parentElement.children[1].innerHTML;
+    document.forms.myForm.elements[0].innerHTML = e.srcElement.parentElement.children[1].innerHTML;
     document.forms.myForm.style.display = 'block';
+    document.forms.myForm.elements[1].disabled = false;
 }
 
 function deleter(e)

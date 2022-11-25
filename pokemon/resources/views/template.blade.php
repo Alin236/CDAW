@@ -3,6 +3,7 @@
     <head> 
         <title>Pokémon</title> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        @yield('css')
     </head>
     <body>
         <p>Mon site Pokémon</p>

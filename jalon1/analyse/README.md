@@ -16,6 +16,5 @@ Dans l'ordre décroissant de priorité :
 
 # Dessin du site
 
-!! Zone en construction, ceci est juste un brouillon !!
-
-![Brouillon](Brouillon.jpeg "Un brouillon")
+![Dessin du site](dessin_du_site_1.jpeg "Dessin du site (1/2)")
+![Dessin du site](dessin_du_site_2.jpeg "Dessin du site (2/2)")

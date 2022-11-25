@@ -15,6 +15,7 @@ Fonctionnalités implémentées :
 - Relations entre les tables
 
 Méthode pour initialiser la base de données :
+
 Par les migrations / seeders.
 ```
 php artisan migrate:fresh --seed

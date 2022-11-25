@@ -11,6 +11,7 @@ Fonctionnalités implémentées :
 - Affichage de Pokémons avec leur énergie dans un tableau (Bestiaire)
 
 Méthode pour initialiser la base de données :
+
 Par les migrations / seeders.
 ```
 php artisan migrate:fresh --seed

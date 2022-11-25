@@ -7,6 +7,8 @@ Après avoir fait le MCD et MLD de la base de donnée (visible ci-dessous) et av
 
 Enfin on utilise une DataTables pour afficher la liste de Pokémons faite durant le jalon 2.
 
+Note : Le système d'historique des parties n'est pas encore complètement fini, il sera rajouté/modifé plus tard dans le MCD et MLD.
+
 ![MCD_et_MLD](MCD_et_MLD.png "Le MCD et MLD")
 
 Fonctionnalités implémentées :

@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+    protected $connection = 'mysql';
+
+    public function energies()
+    {
+        return $this->belongsToMany(Energy::class, 'maitrise', 'id_user', 'id_energy');
+    }
 }

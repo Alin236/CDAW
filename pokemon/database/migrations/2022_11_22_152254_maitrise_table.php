@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('maitrise', function (Blueprint $table) {
             $table->engine = 'innoDB';
             $table->id();
-            $table->foreignId('id_trainer')
+            $table->foreignId('id_user')
                 ->references('id')
-                ->on('trainer')
+                ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
             $table->foreignId('id_energy')

@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(EnergySeeder::class);
         $this->call(PokemonSeeder::class);
-        $this->call(TrainerSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(MaitriseSeeder::class);
     }
 }

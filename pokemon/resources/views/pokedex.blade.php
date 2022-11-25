@@ -8,8 +8,6 @@
                 <th>N°</th>
                 <th>Nom</th>
                 <th>Type</th>
-                <th>PV Max</th>
-                <th>Level</th>
                 <th>Image</th>
             </tr>
         </thead>
@@ -19,13 +17,19 @@
                     <td>{{ $pokemon->id }}</td>
                     <td>{{ $pokemon->name }}</td>
                     <td>{{ $pokemon->energy->name }}</td>
-                    <td>{{ $pokemon->pv_max }}</td>
-                    <td>{{ $pokemon->level }}</td>
                     <td><img src="{{ $pokemon->path }}"></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    <div id="box" style="position: fixed">
+        <p>Nom : <span></span></p>
+        <p>Level : <span></span></p>
+        <p>PV Max : <span></span></p>
+        <p>Attaque : <span></span></p>
+        <p>Attaque spé : <span></span></p>
+        <p>Defense spé : <span></span></p>
+    </div>
 @endsection
 
 @section('javascript')

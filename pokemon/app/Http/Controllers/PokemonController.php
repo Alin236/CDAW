@@ -13,4 +13,8 @@ class PokemonController extends Controller
         $pokemons = Pokemon::all();
         return view('pokedex', compact('pokemons'));
     }
+
+    public function apiShowPokemon($id){
+        return Pokemon::find($id);
+    }
 }

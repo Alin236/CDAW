@@ -3,6 +3,7 @@
 function modify(e)
 {
     document.forms.myForm[0].innerHTML = e.srcElement.parentElement.children[1].innerHTML;
+    document.forms.myForm.style.display = 'block';
 }
 
 function deleter(e)

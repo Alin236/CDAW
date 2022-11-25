@@ -16,5 +16,5 @@ Dans l'ordre décroissant de priorité :
 
 # Dessin du site
 
-![Dessin du site](dessin_du_site_1.jpeg "Dessin du site (1/2)")
-![Dessin du site](dessin_du_site_2.jpeg "Dessin du site (2/2)")
+![Dessin du site (1/2)](dessin_du_site_1.jpeg "Dessin du site (1/2)")
+![Dessin du site (2/2)](dessin_du_site_2.jpeg "Dessin du site (2/2)")

@@ -2,7 +2,7 @@
 
 function modify(e)
 {
-    e.srcElement.parentElement.children[1].innerHTML = "Chaîne modifiée!!"
+    document.forms.myForm[0].innerHTML = e.srcElement.parentElement.children[1].innerHTML
 }
 
 function deleter(e)

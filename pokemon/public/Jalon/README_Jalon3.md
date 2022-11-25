@@ -16,12 +16,12 @@ Fonctionnalités implémentées :
 
 Méthode pour initialiser la base de données :
 Par les migrations / seeders.
-'''
+```
 php artisan migrate:fresh --seed
-'''
+```
 
 Route :
-Aucune
+http://127.0.0.1:8000/pokedex
 
 Identifiants sur le site :
 Aucun

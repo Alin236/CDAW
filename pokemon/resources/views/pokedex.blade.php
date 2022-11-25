@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{ $pokemon->id }}</td>
                     <td>{{ $pokemon->name }}</td>
-                    <td>{{ $energies->find($pokemon->energy)->name }}</td>
+                    <td>{{ $pokemon->energy->name }}</td>
                     <td>{{ $pokemon->pv_max }}</td>
                     <td>{{ $pokemon->level }}</td>
                     <td><img src="{{ $pokemon->path }}"></td>

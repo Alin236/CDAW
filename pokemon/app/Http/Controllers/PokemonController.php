@@ -11,7 +11,6 @@ class PokemonController extends Controller
     public function index()
     {
         $pokemons = Pokemon::all();
-        $energies = Energy::all();
-        return view('pokedex', compact('pokemons', 'energies'));
+        return view('pokedex', compact('pokemons'));
     }
 }

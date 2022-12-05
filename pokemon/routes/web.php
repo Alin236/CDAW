@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\AccueilController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,8 @@ use App\Http\Controllers\PokemonController;
 */
 
 Route::prefix('/')->group(function () {
-    Route::get('/pokedex', [PokemonController::class, 'index']);
+    Route::get('/', [AccueilController::class, 'index'])->name('accueil');
+    Route::get('/pokedex', [PokemonController::class, 'index'])->name('pokedex');
 });
 
 Route::prefix('/decouverteDeLaravel')->group(function () {
@@ -63,11 +65,11 @@ Route::prefix('/decouverteDeLaravel')->group(function () {
 });
 
 // ===== Partie créer par Breeze =========================================
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

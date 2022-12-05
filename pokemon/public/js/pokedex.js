@@ -27,3 +27,13 @@ $(document).ready( function () {
             $('#box').hide();
         })
 });
+
+let mesMaitrise = '';
+function afficheMesPokemons(){
+    if($('#pokedex').DataTable().column(2).search() == ''){
+        $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
+    }
+    else{
+        $('#pokedex').DataTable().column(2).search('').draw();
+    }
+}

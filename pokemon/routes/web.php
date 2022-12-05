@@ -18,6 +18,8 @@ use App\Http\Controllers\AccueilController;
 Route::prefix('/')->group(function () {
     Route::get('/', [AccueilController::class, 'index'])->name('accueil');
     Route::get('/pokedex', [PokemonController::class, 'index'])->name('pokedex');
+    Route::get('/combat', function(){return view('combat');})->name('combat');
+    Route::get('/historique', function(){return view('historique');})->name('historique');
 });
 
 Route::prefix('/decouverteDeLaravel')->group(function () {

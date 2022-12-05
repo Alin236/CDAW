@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\controllers\PokemonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/pokemon/{id}', 'App\Http\controllers\PokemonController@apiShowPokemon');
+Route::get('/pokemon/{id}', [PokemonController::class, 'apiShowPokemon']);

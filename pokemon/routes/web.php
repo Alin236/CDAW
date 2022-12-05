@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PokemonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function () {
-    Route::get('/pokedex', 'App\Http\controllers\PokemonController@index');
+    Route::get('/pokedex', [PokemonController::class, 'index']);
 });
 
 Route::prefix('/decouverteDeLaravel')->group(function () {

@@ -2,7 +2,7 @@ $(document).ready( function () {
     $('#pokedex').DataTable();
 
     $('#box').hide();
-    let temps = 0;
+
     $('#pokedex > tbody > tr')
         .mouseenter(function(event){
             let id = event.currentTarget.children[0].innerHTML;
@@ -21,7 +21,7 @@ $(document).ready( function () {
             });
         })
         .mousemove(function(event){
-            $('#box').css({left: event.pageX, top: event.pageY});
+            $('#box').css({left: event.pageX + 20, top: event.pageY});
         })
         .mouseleave(function(event){
             $('#box').hide();

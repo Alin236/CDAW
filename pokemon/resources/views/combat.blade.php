@@ -7,3 +7,7 @@
         <li>Combat manuel</li>
     </ul>
 @endsection
+
+@section('navbarActiveIndex')
+    3
+@endsection

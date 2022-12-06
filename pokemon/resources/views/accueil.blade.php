@@ -14,3 +14,7 @@
         @endauth
     </p>
 @endsection
+
+@section('navbarActiveIndex')
+    1
+@endsection

@@ -49,3 +49,7 @@
         </script>
     @endauth
 @endsection
+
+@section('navbarActiveIndex')
+    2
+@endsection

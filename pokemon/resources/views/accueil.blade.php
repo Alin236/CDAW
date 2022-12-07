@@ -1,18 +1,30 @@
 @extends('template')
 
 @section('content')
-    <p>Navigation :</p>
-    <p><a href="{{ route('accueil') }}">Accueil</a></p>
-    <p><a href="{{ route('pokedex') }}">Pokedex</a></p>
-    <p><a href="{{ route('historique') }}">Historique</a></p>
-    <p><a href="{{ route('combat') }}">Lancer un combat</a></p>
-    <p>
-        @auth
-            <a href="{{ route('profile.edit') }}">Mon profil</a>
-        @else
-            <a href="{{ route('login') }}">Se connecter</a>
-        @endauth
-    </p>
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ asset('img/img.png') }}">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ asset('img/pokemon_SV.png') }}">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ asset('img/img.png') }}">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
 @endsection
 
 @section('navbarActiveIndex')

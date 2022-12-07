@@ -2,7 +2,17 @@
     <a class="navbar-brand" href="{{ route('accueil') }}">Pokémon</a>
     <div>
         @auth
-            <a class="btn btn-outline-success" href="{{ route('profile.edit') }}">Profil</a>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{{ route('profile.edit') }}">Profil</a>
+                    <div class="dropdown-divider"></div>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="dropdown-item" href="{{ route('logout') }}">Se déconnecter</button>
+                    </form>
+                </div>
+            </div>
         @else
             <a class="btn btn-outline-success" href="{{ route('login') }}">Se connecter</a>
             <a class="btn btn-outline-success" href="{{ route('register') }}">Créer un compte</a>

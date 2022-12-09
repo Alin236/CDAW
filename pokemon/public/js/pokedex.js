@@ -5,7 +5,11 @@ $(document).ready( function () {
             {
                 text: 'Mes pokémons',
                 action: afficheMesPokemons,
-            }
+            },
+            {
+                text: 'Tous les pokémons',
+                action: afficheTousLesPokemons,
+            },
         ]
     });
 
@@ -38,12 +42,8 @@ $(document).ready( function () {
 
 let mesMaitrise = '';
 function afficheMesPokemons(){
-    if($('#pokedex').DataTable().column(2).search() == ''){
-        $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
-        $(".dt-button:first span").html('Tous les pokémons');
-    }
-    else{
-        $('#pokedex').DataTable().column(2).search('').draw();
-        $(".dt-button:first span").html('Mes pokémons');
-    }
+    $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
+}
+function afficheTousLesPokemons(){
+    $('#pokedex').DataTable().column(2).search('').draw();
 }

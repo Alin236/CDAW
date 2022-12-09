@@ -7,10 +7,10 @@
 @section('content')
     <div class="card-deck">
         <div class="card">
-            <a href="">
+            <a href="{{ route('combat classique') }}">
                 <h3 class="card-header text-center">Combat classique</h3>
                 <div class="card-body">
-                    <h4 class="text-center text-warning">Mode de jeu à venir</h4>
+                    <h4 class="text-center text-warning">Mode de jeu en construction</h4>
                     <h5 class="card-title">Règle</h5>
                     <ul>
                         <li>3 pokémons vs 3 pokémons</li>
@@ -63,6 +63,7 @@
         }
 
         $('.card a').attr('onclick', 'return modeAVenir()');
+        $('.card:first a').attr('onclick', '');
     </script>
 @endsection
 

@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\{
+    ProfileController,
+    PokemonController,
+    AccueilController,
+    CombatController
+};
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PokemonController;
-use App\Http\Controllers\AccueilController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +21,7 @@ use App\Http\Controllers\AccueilController;
 Route::prefix('/')->group(function () {
     Route::get('/', [AccueilController::class, 'index'])->name('accueil');
     Route::get('/pokedex', [PokemonController::class, 'index'])->name('pokedex');
-    Route::get('/combat', function(){return view('combat');})->middleware('auth')->name('combat');
+    Route::get('/combat', [CombatController::class, 'menu'])->middleware('auth')->name('combat');
     Route::get('/historique', function(){return view('historique');})->name('historique');
 });
 

@@ -1,5 +1,13 @@
 $(document).ready( function () {
-    $('#pokedex').DataTable();
+    $('#pokedex').DataTable({
+        dom : 'lfBrtip',
+        buttons: [
+            {
+                text: 'Mes pokémons',
+                action: afficheMesPokemons,
+            }
+        ]
+    });
 
     $('#box').hide();
 
@@ -32,8 +40,10 @@ let mesMaitrise = '';
 function afficheMesPokemons(){
     if($('#pokedex').DataTable().column(2).search() == ''){
         $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
+        $(".dt-button:first span").html('Tous les pokémons');
     }
     else{
         $('#pokedex').DataTable().column(2).search('').draw();
+        $(".dt-button:first span").html('Mes pokémons');
     }
 }

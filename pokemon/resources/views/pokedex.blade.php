@@ -1,10 +1,12 @@
 @extends('template')
 
+@section('css')
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pokedex.css') }}"/>
+@endsection
+
 @section('content')
-    <p>Liste des pokémons :</p>
-    @auth
-        <label>Mes pokémons : <input type="checkbox" onclick="afficheMesPokemons()"></label>
-    @endauth
     <table id="pokedex">
         <thead>
             <tr>
@@ -36,18 +38,22 @@
 @endsection
 
 @section('javascript')
-    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/pokedex.js') }}"></script>
-    @auth
-        <script type="text/javascript">
+    <script type="text/javascript" defer>
+        @auth
             mesMaitrise = ""
             @foreach(Auth::user()->energies as $energy)
                 mesMaitrise += "{{ $energy->name }}" + "|";
             @endforeach
             mesMaitrise = mesMaitrise.slice(0, -1);
-        </script>
-    @endauth
+        @else
+            $(document).ready( function () {
+                $(".dt-button:first").hide();
+            });
+        @endauth
+    </script>
 @endsection
 
 @section('navbarActiveIndex')

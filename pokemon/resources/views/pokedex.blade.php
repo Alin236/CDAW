@@ -41,7 +41,7 @@
     <script type="text/javascript" src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/pokedex.js') }}"></script>
-    <script type="text/javascript" defer>
+    <script type="text/javascript">
         @auth
             mesMaitrise = ""
             @foreach(Auth::user()->energies as $energy)

@@ -23,6 +23,7 @@ Route::prefix('/')->group(function () {
     Route::get('/pokedex', [PokemonController::class, 'index'])->name('pokedex');
     Route::get('/combat', [CombatController::class, 'menu'])->middleware('auth')->name('combat');
     Route::get('/historique', function(){return view('historique');})->name('historique');
+    Route::get('/test', function(){return view('test');})->middleware('auth')->name('test');
 });
 
 Route::prefix('/decouverteDeLaravel')->group(function () {

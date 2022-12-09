@@ -1,17 +1,10 @@
 $(document).ready( function () {
     $('#pokedex').DataTable({
         dom : 'lfBrtip',
-        buttons: [
-            {
-                text: 'Mes pokémons',
-                action: afficheMesPokemons,
-            },
-            {
-                text: 'Tous les pokémons',
-                action: afficheTousLesPokemons,
-            },
-        ]
     });
+    $('#divSwitch').appendTo('.dt-buttons');
+    $('#switch').attr('onclick', 'afficheMesPokemons(this)');
+    $('#labelSwitch2').css('color', 'lightgray');
 
     $('#box').hide();
 
@@ -42,8 +35,14 @@ $(document).ready( function () {
 
 let mesMaitrise = '';
 function afficheMesPokemons(){
-    $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
-}
-function afficheTousLesPokemons(){
-    $('#pokedex').DataTable().column(2).search('').draw();
+    if($('#pokedex').DataTable().column(2).search() == ''){
+        $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
+        $('#labelSwitch1').css('color', 'lightgray');
+        $('#labelSwitch2').css('color', 'black');
+    }
+    else{
+        $('#pokedex').DataTable().column(2).search('').draw();
+        $('#labelSwitch1').css('color', 'black');
+        $('#labelSwitch2').css('color', 'lightgray');
+    }
 }

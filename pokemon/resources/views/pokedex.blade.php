@@ -7,6 +7,13 @@
 @endsection
 
 @section('content')
+    <div id="divSwitch">
+        <label for="switch" id="labelSwitch1">Tous les pokémons</label>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="switch">
+            <label class="custom-control-label" for="switch" id="labelSwitch2">Mes pokémons</label>
+        </div>
+    </div>
     <table id="pokedex">
         <thead>
             <tr>
@@ -27,7 +34,7 @@
             @endforeach
         </tbody>
     </table>
-    <div id="box" style="position: fixed">
+    <div id="box">
         <p>Nom : <span></span></p>
         <p>Level : <span></span></p>
         <p>PV Max : <span></span></p>

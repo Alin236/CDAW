@@ -1,3 +1,22 @@
+#box {
+    position: fixed
+}
+
 div.dt-buttons {
     float: right;
+}
+
+#labelSwitch2 {
+    vertical-align: -webkit-baseline-middle;
+    margin-right: 10px;
+}
+
+.custom-switch {
+    display: inline;
+    padding-left: 42px;
+}
+
+#labelSwitch1{
+    vertical-align: bottom;
+    margin-bottom: 0;
 }

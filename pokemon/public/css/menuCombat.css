@@ -1,4 +1,9 @@
-a.col {
+.card a {
     color: black;
     text-decoration: none;
+}
+
+.card-deck {
+    margin-right: 0;
+    margin-left: 0;
 }

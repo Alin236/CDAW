@@ -4,6 +4,7 @@ let joueurAdverseIndex = (joueurActuelIndex+1)%2;
 // let pokemons = [[pokemon11, pokemon12, pokemon13], [pokemon21, pokemon22, pokemon23]]
 let tour = 1;
 let defenses = [0, 0];
+let pt = [{attaqueSpe: 1, defenseSpe: 1}, {attaqueSpe: 1, defenseSpe: 1}];
 let action;
 const Action = {
     attaque: 'Attaque',
@@ -52,6 +53,11 @@ function faireAttaque(){
 }
 
 function faireAttaqueSpe(){
+    if(pt[joueurActuelIndex].defenseSpe == 0){
+        faireAttaque();
+        return;
+    }
+    pt[joueurActuelIndex].attaqueSpe -= 1;
     attaque = getPokemonOfJoueur(joueurActuelIndex).attack;
     degat = Math.max(attaque - defenses[joueurAdverseIndex], 0)
     getPokemonOfJoueur(joueurAdverseIndex).pv -= degat;
@@ -59,6 +65,11 @@ function faireAttaqueSpe(){
 }
 
 function faireDefenseSpe(){
+    if(pt[joueurActuelIndex].defenseSpe == 0){
+        faireAttaque();
+        return;
+    }
+    pt[joueurActuelIndex].defenseSpe -= 1;
     defenses[joueurActuelIndex] = getPokemonOfJoueur(joueurActuelIndex).special_defense;
 }
 

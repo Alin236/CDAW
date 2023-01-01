@@ -59,7 +59,7 @@ function faireAttaqueSpe(){
 }
 
 function faireDefenseSpe(){
-
+    defenses[joueurActuelIndex] = getPokemonOfJoueur(joueurActuelIndex).special_defense;
 }
 
 function faireFuite(){

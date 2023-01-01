@@ -13,7 +13,7 @@
         let pokemons = {!! $pokemons !!};
         let pokemonActuelIndex = [1,2];
     </script>
-    <script type="text/javascript" src="{{ asset('js/systemeCombat.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/systemeCombatGeneral.js') }}"></script>
     
 @endsection
 

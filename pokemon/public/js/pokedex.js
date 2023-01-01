@@ -14,12 +14,12 @@ $(document).ready( function () {
             $.get({
                 url: 'api/pokemon/' + id,
                 success: function(pokemon){
-                    $("#box span")[0].innerHTML = pokemon.name;
-                    $("#box span")[1].innerHTML = pokemon.level;
-                    $("#box span")[2].innerHTML = pokemon.pv_max;
-                    $("#box span")[3].innerHTML = pokemon.attack;
-                    $("#box span")[4].innerHTML = pokemon.special_attack;
-                    $("#box span")[5].innerHTML = pokemon.special_defense;
+                    $("#box h5")[0].innerHTML = pokemon.name;
+                    $("#box span")[0].innerHTML = pokemon.level;
+                    $("#box span")[1].innerHTML = pokemon.pv_max;
+                    $("#box span")[2].innerHTML = pokemon.attack;
+                    $("#box span")[3].innerHTML = pokemon.special_attack;
+                    $("#box span")[4].innerHTML = pokemon.special_defense;
                     $('#box').show();
                 },
                 datatype: 'json',

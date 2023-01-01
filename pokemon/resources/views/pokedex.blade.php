@@ -36,13 +36,17 @@
             @endforeach
         </tbody>
     </table>
-    <div id="box">
-        <p>Nom : <span></span></p>
-        <p>Level : <span></span></p>
-        <p>PV Max : <span></span></p>
-        <p>Attaque : <span></span></p>
-        <p>Attaque spé : <span></span></p>
-        <p>Defense spé : <span></span></p>
+    <div id="box" class="card">
+        <h5 class="card-header text-center"></h5>
+        <div class="card-body">
+            <ul>
+                <li>Level : <span></span></li>
+                <li>PV Max : <span></span></li>
+                <li>Attaque : <span></span></li>
+                <li>Attaque spé : <span></span></li>
+                <li>Defense spé : <span></span></li>
+            <ul>
+        </div>
     </div>
 @endsection
 

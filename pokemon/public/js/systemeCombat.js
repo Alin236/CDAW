@@ -63,5 +63,7 @@ function faireDefenseSpe(){
 }
 
 function faireFuite(){
-    //abondonner
+    pokemons[joueurActuelIndex].forEach(pokemon => {
+        pokemon.pv = 0;
+    })
 }

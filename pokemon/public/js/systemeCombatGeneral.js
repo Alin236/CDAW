@@ -27,7 +27,7 @@ function joueurSuivant(){
 function faireAction(){
     switch(action){
         case Action.attaque:
-            faireAction;
+            faireAttaque();
             break;
         case Action.attaqueSpe:
             faireAttaqueSpe();
@@ -54,6 +54,7 @@ function faireAttaque(){
 
 function faireAttaqueSpe(){
     if(pt[joueurActuelIndex].defenseSpe == 0){
+        action = Action.attaque
         faireAttaque();
         return;
     }
@@ -66,6 +67,7 @@ function faireAttaqueSpe(){
 
 function faireDefenseSpe(){
     if(pt[joueurActuelIndex].defenseSpe == 0){
+        action = Action.attaque
         faireAttaque();
         return;
     }

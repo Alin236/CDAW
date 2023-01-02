@@ -54,7 +54,7 @@ joueurs[0].color = "primary";
 joueurs[1].color = "danger";
 
 function afficherInterfaceDuJoueur(joueurIndex){
-    $("h1 span").html(joueurIndex+1);
+    $("h1 span").html(joueurs[joueurIndex].name);
     joueurActuelColor = joueurs[joueurIndex].color;
     joueurAdverseColor = joueurs[(joueurIndex+1)%2].color;
     $("h1").addClass("text-" + joueurActuelColor).removeClass("text-" + joueurAdverseColor);

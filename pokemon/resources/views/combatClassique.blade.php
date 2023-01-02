@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h1>Tour du joueur <span>X</span></h1>
+    <h1>Tour de <span>X</span></h1>
     <div class="card-deck">
         <div class="card border-primary">
             <h5 class="card-header text-center border-primary"></h5>

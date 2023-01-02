@@ -18,6 +18,25 @@
 
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <div class="max-w-xl">
+                        <section>
+                            <header>
+                                <h2 class="text-lg font-medium text-gray-900">Energies maîtrisées :</h2>
+                            </header>
+                            <div>
+                                <ul>
+                                    @foreach($user->energies as $energy)
+                                        <li>
+                                            {{ $energy->name }}                               
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        <section>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                    <div class="max-w-xl">
                         @include('profile.partials.update-password-form')
                     </div>
                 </div>

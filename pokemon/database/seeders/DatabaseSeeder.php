@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(MaitriseSeeder::class);
         $this->call(BattleTypeSeeder::class);
+        $this->call(ActionSeeder::class);
         
         //$this->call(PokemonTrueStatSeeder::class);
     }

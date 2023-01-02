@@ -20,5 +20,9 @@ h1 {
 }
 
 #commandeBox {
-    height: 100px;
+    height: 150px;
+}
+
+#description {
+    text-align: center;
 }

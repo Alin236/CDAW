@@ -1,0 +1,15 @@
+#commandeBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commande {
+    display: flex;
+    flex-direction: column;
+}
+
+#description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

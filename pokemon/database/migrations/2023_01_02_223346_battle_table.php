@@ -26,6 +26,11 @@ return new class extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
+            $table->foreignId('id_first')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
             $table->foreignId('id_pokemon_J1_1')
                 ->references('id')
                 ->on('pokemon')

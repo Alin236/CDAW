@@ -78,3 +78,9 @@ function faireFuite(){
         pokemon.pv = 0;
     })
 }
+
+function pokemonAdverseIsDead(){
+    if(getPokemonOfJoueur(joueurAdverseIndex).pv <= 0)
+        return true;
+    return false;
+}

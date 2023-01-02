@@ -95,9 +95,9 @@ function faireDefenseSpe(){
 }
 
 function faireFuite(){
-    pokemons[joueurActuelIndex].forEach(pokemon => {
-        pokemon.pv = 0;
-    })
+    description = joueurs[joueurActuelIndex].name + " fuit le combat<br>"
+    gagnant = joueurs[joueurAdverseIndex];
+    fin();
 }
 
 function pokemonAdverseIsDead(){
@@ -111,13 +111,13 @@ function pokemonAdverseIsDead(){
 
 function pokemonAdverseSuivant(){
     if(++pokemonActuelIndex[joueurAdverseIndex] == 3){
+        gagnant = joueurs[joueurActuelIndex];
         fin();
     };    
 }
 
 function fin(){
     game = Game.fini;
-    gagnant = joueurs[joueurActuelIndex];
     description += gagnant.name + ' est le vainqueur<br><a class="btn btn-success" href=".." role="button">Retour</a>'
     sauvegarderPartie();
 }

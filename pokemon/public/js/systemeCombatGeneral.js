@@ -7,8 +7,8 @@ let description;
 let action;
 const Action = {
     attaque: 'Attaque',
-    attaqueSpe: 'Attaque spécial',
-    defenseSpe: 'Défense spécial',
+    attaqueSpe: 'Attaque spéciale',
+    defenseSpe: 'Défense spéciale',
     fuite: 'Fuite'
 };
 
@@ -26,6 +26,7 @@ function joueurSuivant(){
 }
 
 function faireAction(){
+    description = "";
     switch(action){
         case Action.attaque:
             faireAttaque();
@@ -47,11 +48,14 @@ function getPokemonOfJoueur(joueurIndex){
 }
 
 function faireAttaque(){
-    attaque = getPokemonOfJoueur(joueurActuelIndex).attack;
+    pokemonActuel = getPokemonOfJoueur(joueurActuelIndex)
+    attaque = pokemonActuel.attack;
     pokemonAdverse = getPokemonOfJoueur(joueurAdverseIndex);
     degat = Math.max(attaque - pokemonAdverse.defense, 0);
     pokemonAdverse.pv -= degat;
     pokemonAdverse.defense = 0;
+    description += pokemonActuel.name + " effectue une attaque<br>"
+    description += pokemonActuel.name + " inflige " + degat + " à " + pokemonAdverse.name + "<br>";
 }
 
 function faireAttaqueSpe(){
@@ -67,6 +71,8 @@ function faireAttaqueSpe(){
     degat = Math.max(attaque - pokemonAdverse.defense, 0);
     pokemonAdverse.pv -= degat;
     pokemonAdverse.defense = 0;
+    description += pokemonActuel.name + " effectue une attaque spéciale<br>"
+    description += pokemonActuel.name + " inflige " + degat + " point de dégât à " + pokemonAdverse.name + "<br>";
 }
 
 function faireDefenseSpe(){
@@ -78,6 +84,8 @@ function faireDefenseSpe(){
     }
     pokemonActuel.pt.special_defense -= 1;
     pokemonActuel.defense = pokemonActuel.special_defense;
+    description += pokemonActuel.name + " effectue defense spécial<br>"
+    description += pokemonActuel.name + " reçoit " + pokemonActuel.defense + " point de défense<br>";
 }
 
 function faireFuite(){
@@ -87,8 +95,11 @@ function faireFuite(){
 }
 
 function pokemonAdverseIsDead(){
-    if(getPokemonOfJoueur(joueurAdverseIndex).pv <= 0)
+    pokemonAdverse = getPokemonOfJoueur(joueurAdverseIndex);
+    if(pokemonAdverse.pv <= 0){
+        description += pokemonAdverse.name + " est KO"
         return true;
+    }
     return false;
 }
 

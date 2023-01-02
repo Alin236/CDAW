@@ -11,6 +11,7 @@ function jouer(actionChoisi){
 function updateAffichage(){
     afficherPokemonDeJoueur(0);
     afficherPokemonDeJoueur(1);
+    afficherDescription();
     afficherInterfaceDuJoueur(joueurActuelIndex);
 }
 
@@ -32,6 +33,15 @@ function afficherPokemonCard(card, pokemon){
     baliseActuel.eq(2).html(pokemon.attack);
     baliseActuel.eq(3).html(pokemon.special_attack);
     baliseActuel.eq(4).html(pokemon.special_defense);
+
+    if(pokemon.pv<=0){
+        baliseActuel = $(card).removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");
+        baliseActuel.removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");
+        baliseActuel = baliseActuel.children();
+        baliseActuel.removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");
+        baliseActuel = baliseActuel.children();
+        baliseActuel.removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");
+    }
 }
 
 joueurs[0].color = "primary";
@@ -43,6 +53,10 @@ function afficherInterfaceDuJoueur(joueurIndex){
     joueurAdverseColor = joueurs[(joueurIndex+1)%2].color;
     $("h1").addClass("text-" + joueurActuelColor).removeClass("text-" + joueurAdverseColor);
     $(".commande button").addClass("btn-" + joueurActuelColor).removeClass("btn-" + joueurAdverseColor);
+}
+
+function afficherDescription(){
+    $("#description p").html(description);
 }
 
 $(document).ready(function(){

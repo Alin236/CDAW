@@ -59,6 +59,18 @@ function afficherInterfaceDuJoueur(joueurIndex){
     joueurAdverseColor = joueurs[(joueurIndex+1)%2].color;
     $("h1").addClass("text-" + joueurActuelColor).removeClass("text-" + joueurAdverseColor);
     $(".commande button").addClass("btn-" + joueurActuelColor).removeClass("btn-" + joueurAdverseColor);
+
+    buttons = $("#commandeBox button");
+    buttons.removeAttr("disabled");
+    if(game == Game.fini){
+        buttons.attr("disabled", "true");
+        return;
+    }
+    pokemon = getPokemonOfJoueur(joueurIndex);
+    if(pokemon.pt.special_attack == 0)
+        buttons.eq(1).attr("disabled", "true");
+    if(pokemon.pt.special_defense == 0)
+        buttons.eq(2).attr("disabled", "true");
 }
 
 function afficherDescription(){

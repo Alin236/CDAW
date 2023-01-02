@@ -133,6 +133,7 @@
         let joueurs = {!! $joueurs !!};
         let pokemons = {!! $pokemons !!};
         let pokemonActuelIndex = [0,0];
+        let idPartie = 1;
     </script>
     <script type="text/javascript" src="{{ asset('js/systemeCombatGeneral.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/systemeCombatClassique.js') }}"></script>

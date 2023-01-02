@@ -1,3 +1,5 @@
+//let idPartie;
+
 function jouer(actionChoisi){
     if(game == Game.fini){
         return;

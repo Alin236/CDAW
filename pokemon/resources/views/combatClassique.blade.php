@@ -131,7 +131,7 @@
     <script type="text/javascript">
         let joueurs = {!! $joueurs !!};
         let pokemons = {!! $pokemons !!};
-        let pokemonActuelIndex = [1,2];
+        let pokemonActuelIndex = [0,0];
     </script>
     <script type="text/javascript" src="{{ asset('js/systemeCombatGeneral.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/systemeCombatClassique.js') }}"></script>

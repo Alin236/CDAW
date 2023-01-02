@@ -11,6 +11,7 @@ function jouer(actionChoisi){
 function updateAffichage(){
     afficherPokemonDeJoueur(0);
     afficherPokemonDeJoueur(1);
+    afficherInterfaceDuJoueur(joueurActuelIndex);
 }
 
 function afficherPokemonDeJoueur(joueurIndex){
@@ -31,6 +32,17 @@ function afficherPokemonCard(card, pokemon){
     baliseActuel.eq(2).html(pokemon.attack);
     baliseActuel.eq(3).html(pokemon.special_attack);
     baliseActuel.eq(4).html(pokemon.special_defense);
+}
+
+joueurs[0].color = "primary";
+joueurs[1].color = "danger";
+
+function afficherInterfaceDuJoueur(joueurIndex){
+    $("h1 span").html(joueurIndex+1);
+    joueurActuelColor = joueurs[joueurIndex].color;
+    joueurAdverseColor = joueurs[(joueurIndex+1)%2].color;
+    $("h1").addClass("text-" + joueurActuelColor).removeClass("text-" + joueurAdverseColor);
+    $(".commande button").addClass("btn-" + joueurActuelColor).removeClass("btn-" + joueurAdverseColor);
 }
 
 $(document).ready(function(){

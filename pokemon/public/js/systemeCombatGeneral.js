@@ -3,6 +3,7 @@ let joueurActuelIndex = Math.floor(Math.random() * 2);
 let joueurAdverseIndex = (joueurActuelIndex+1)%2;
 // let pokemons = [[pokemon11, pokemon12, pokemon13], [pokemon21, pokemon22, pokemon23]]
 let tour = 1;
+let description;
 let action;
 const Action = {
     attaque: 'Attaque',

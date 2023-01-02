@@ -1,10 +1,14 @@
 function jouer(actionChoisi){
+    if(game == Game.fini){
+        return;
+    }
     action = actionChoisi;
     faireAction();
     if(pokemonAdverseIsDead()){
         pokemonAdverseSuivant();
     }
     joueurSuivant();
+    sauvegarderAction();
     updateAffichage();
 }
 
@@ -62,3 +66,17 @@ function afficherDescription(){
 $(document).ready(function(){
     updateAffichage();
 })
+
+let actions = [];
+function sauvegarderAction(){
+    actions.push(action);
+};
+
+function sauvegarderPartie(){
+    partieInfo = {id: idPartie, actions: actions, gagnant: gagnant};
+    $.post({
+        url: 'combat', 
+        data: partieInfo,
+        dateType: 'json',
+    })
+}

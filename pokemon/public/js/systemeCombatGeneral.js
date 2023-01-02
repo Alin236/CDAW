@@ -11,6 +11,12 @@ const Action = {
     defenseSpe: 'Défense spéciale',
     fuite: 'Fuite'
 };
+const Game = {
+    enCours: "en cours",
+    fini: "fini"
+}
+let game = Game.enCours;
+let gagnant;
 
 pokemons.forEach(pokemonJ => {
     pokemonJ.forEach(pokemon => {
@@ -97,7 +103,7 @@ function faireFuite(){
 function pokemonAdverseIsDead(){
     pokemonAdverse = getPokemonOfJoueur(joueurAdverseIndex);
     if(pokemonAdverse.pv <= 0){
-        description += pokemonAdverse.name + " est KO"
+        description += pokemonAdverse.name + " est KO<br>"
         return true;
     }
     return false;
@@ -110,5 +116,12 @@ function pokemonAdverseSuivant(){
 }
 
 function fin(){
-    console.log("fin");
+    game = Game.fini;
+    gagnant = joueurs[joueurActuelIndex];
+    description += gagnant.name + ' est le vainqueur<br><a class="btn btn-success" href=".." role="button">Retour</a>'
+    sauvegarderPartie();
+}
+
+function sauvegarderPartie(){
+    return false;
 }

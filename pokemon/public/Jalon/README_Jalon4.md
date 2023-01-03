@@ -39,7 +39,6 @@ git clone https://github.com/Alin236/CDAW.git
 cd CDAW/pokemon
 cp .env.example .env
 composer update
-npm run dev
 php artisan migrate:fresh --seed
 ```
 

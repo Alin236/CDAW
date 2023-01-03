@@ -17,8 +17,7 @@ class CombatController extends Controller
     }
 
     public function initiateCombatClassique(){
-        $pokemons = Pokemon::all();
-        return view('choixCombatPokemon', Compact('pokemons'));
+        return view('choixCombatPokemon');
     }
     
     public function launchCombatClassique(Request $request){
@@ -65,14 +64,14 @@ class CombatController extends Controller
         foreach($energies as $energy){
             array_push($energiesId,$energy->id);
         }
-        $pokemons1 = Pokemon::whereIn('energy_id', $energiesId)->get();
+        $pokemons1 = Pokemon::whereIn('energy_id', $energiesId)->where('level', '<', $joueur1->level)->get();
 
         $energies = $joueur2->energies;
         $energiesId = [];
         foreach($energies as $energy){
             array_push($energiesId,$energy->id);
         }
-        $pokemons2 = Pokemon::whereIn('energy_id', $energiesId)->get();
+        $pokemons2 = Pokemon::whereIn('energy_id', $energiesId)->where('level', '<', $joueur2->level)->get();
 
         return ['joueur1' => $joueur1, 'joueur2' => $joueur2, 'pokemons1' => $pokemons1, 'pokemons2' => $pokemons2];
     }

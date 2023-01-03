@@ -40,6 +40,7 @@ cd CDAW/pokemon
 cp .env.example .env
 composer update
 php artisan breeze:install
+git restore .
 php artisan migrate:fresh --seed
 ```
 

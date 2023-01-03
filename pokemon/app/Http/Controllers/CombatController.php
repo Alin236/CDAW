@@ -19,10 +19,13 @@ class CombatController extends Controller
         return view('choixCombatPokemon', Compact('pokemons'));
     }
     
-    public function getCombatClassique(){
-        $joueurs = User::whereIn('id', [1,2])->get();
-        $pokemons = collect([Pokemon::whereIn('id', [1,2,3])->get()->toArray(), Pokemon::whereIn('id', [4,5,6])->get()->toArray()]);
-        return view('combatClassique', Compact('joueurs', 'pokemons'));
+    public function launchCombatClassique(Request $request){
+
+        $joueurs = User::whereIn('id', [$request->input('joueur1'),$request->input('joueur2')])->get();
+        $pokemons = collect([Pokemon::whereIn('id', [$request->input('pokemon11'),$request->input('pokemon12'),$request->input('pokemon13')])->get()->toArray(),
+            Pokemon::whereIn('id', [$request->input('pokemon21'),$request->input('pokemon22'),$request->input('pokemon23')])->get()->toArray()]);
+        $joueurActuel = $request->input('firstJoueur');
+        return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel'));
     }
 
     public function combatChoix(Request $request){

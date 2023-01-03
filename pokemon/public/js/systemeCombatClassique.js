@@ -89,7 +89,7 @@ function sauvegarderAction(){
 function sauvegarderPartie(){
     partieInfo = {id: idPartie, actions: actions, gagnant: gagnant};
     $.post({
-        url: 'combat', 
+        url: '../combat',
         data: partieInfo,
         dateType: 'json',
     })

@@ -87,15 +87,19 @@ function sauvegarderAction(){
 };
 
 function sauvegarderPartie(){
-    partieInfo = {id: idPartie, actions: actions, gagnant: gagnant};
+    partieInfo = {idPartie: idPartie, actions: actions, gagnant: gagnant};
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    $.put({
+    $.ajax({
         url: '../combat',
+        type: 'PUT',
         data: partieInfo,
-        dateType: 'json',
+        dateType: 'text',
+        success: function(data){
+            console.log(data);
+        }
     })
 }

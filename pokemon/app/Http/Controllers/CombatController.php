@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\{User, Pokemon, Battle};
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AllRequest;
+
 
 class CombatController extends Controller
 {
@@ -73,5 +75,11 @@ class CombatController extends Controller
         $pokemons2 = Pokemon::whereIn('energy_id', $energiesId)->get();
 
         return ['joueur1' => $joueur1, 'joueur2' => $joueur2, 'pokemons1' => $pokemons1, 'pokemons2' => $pokemons2];
+    }
+
+    public function save(AllRequest $request){
+        $battle = Battle::find($request->idPartie);
+        $battle->id_gagnant = $request->gagnant['id'];
+        $battle->save();
     }
 }

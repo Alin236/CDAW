@@ -61,7 +61,7 @@ return new class extends Migration
                 ->on('pokemon')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
-            $table->foreignId('gagnant')
+            $table->foreignId('id_gagnant')
                 ->nullable()
                 ->references('id')
                 ->on('pokemon')

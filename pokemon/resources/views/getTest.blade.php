@@ -7,7 +7,7 @@
 <script type="text/javascript">
     function test(){
         
-        json = {name: 'test', color: 'red', e:'e'};
+        json = {name: 'test', color: 'red'};
 
         $.ajaxSetup({
             headers: {

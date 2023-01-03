@@ -25,7 +25,7 @@ class EnergyRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'color' => ['required', 'numeric'],
+            'color' => ['required', 'string'],
         ];
     }
 }

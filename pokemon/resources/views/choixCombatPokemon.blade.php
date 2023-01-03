@@ -14,17 +14,28 @@
             <label>Mot de passe : <input type="text" name="password"></label>
             <br>
             <button type="button" class="btn btn-primary" onclick="authenticate()">Se connecter</button>
+            <p class="text-danger"></p>
         </div>
     </div>
-    <div id="choix" hidden>
-        <div class="card-deck">
-            <div class="card">
-                <div class="card-body">
-
-                </div>
-            </div>
+    <div id="choix">
+        <h2>Joueur <span></span> choisi son pokémon n°<span></span></h2>
+        <div class="card-columns">
         </div>
     </div>
+    <form id="form" hidden action="" method="post">
+        @csrf
+        <div id="formInput">
+            <input type="text" name="joueur1">
+            <input type="text" name="joueur2">
+            <input type="text" name="pokemon11">
+            <input type="text" name="pokemon12">
+            <input type="text" name="pokemon13">
+            <input type="text" name="pokemon21">
+            <input type="text" name="pokemon22">
+            <input type="text" name="pokemon23">
+            <input type="text" name="firstJoueur">
+        </div>
+    </form>
 @endsection
 
 @section('javascript')

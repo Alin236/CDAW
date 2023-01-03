@@ -6,6 +6,7 @@
 ## Description
 
 Le jalon 4 est la livraison du site.
+
 Voici la liste des fonctionnalités qui ont été implémenté au cours de ce projet :
 - Pour toute personne :
     - Parcourir l'ensemble des pokémons
@@ -28,6 +29,9 @@ Voici la liste des lacunes du site :
     - Combat semi-automatique (choix aléatoire + tour par tour)
     - Combat automatique (Tout les choix sont aléatoires)
 - Récompense de fin de partie
+
+Correction à apporter :
+- La liste des pokémons possédés par un joueur ne prend pas en compte le level du joueur (uniquement dans le pokédex, lors de la sélection des pokémons pour un combat le level du joueur est bien pris en compte)
 
 ## Méthode d'installation du projet
 ```

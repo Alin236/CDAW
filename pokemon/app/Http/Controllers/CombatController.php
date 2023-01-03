@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{User, Pokemon};
+use App\Models\{User, Pokemon, Battle};
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +25,20 @@ class CombatController extends Controller
         $pokemons = collect([Pokemon::whereIn('id', [$request->input('pokemon11'),$request->input('pokemon12'),$request->input('pokemon13')])->get()->toArray(),
             Pokemon::whereIn('id', [$request->input('pokemon21'),$request->input('pokemon22'),$request->input('pokemon23')])->get()->toArray()]);
         $joueurActuel = $request->input('firstJoueur');
-        return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel'));
+
+        $battle = new Battle;
+        $battle->id_joueur_1 = $joueurs[0]->id;
+        $battle->id_joueur_2 = $joueurs[1]->id;
+        $battle->id_first = $joueurActuel;
+        $battle->id_pokemon_J1_1 = $pokemons[0][0]['id'];
+        $battle->id_pokemon_J1_2 = $pokemons[0][1]['id'];
+        $battle->id_pokemon_J1_3 = $pokemons[0][2]['id'];
+        $battle->id_pokemon_J2_1 = $pokemons[1][0]['id'];
+        $battle->id_pokemon_J2_2 = $pokemons[1][1]['id'];
+        $battle->id_pokemon_J2_3 = $pokemons[1][2]['id'];
+        $battle->save();
+        $idPartie = $battle->id;
+        return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel', 'idPartie'));
     }
 
     public function combatChoix(Request $request){

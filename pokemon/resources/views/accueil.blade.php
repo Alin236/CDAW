@@ -1,21 +1,18 @@
 @extends('template')
 
 @section('content')
+    <h1 class="text-center">Les news :</h1>
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li class="active"></li>
             <li></li>
-            <li></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/img.png') }}">
-            </div>
-            <div class="carousel-item">
                 <img class="d-block w-100" src="{{ asset('img/pokemon_SV.png') }}">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/img.png') }}">
+                <img class="d-block w-100" src="{{ asset('img/pokemon_pub.png') }}">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carousel" data-slide="prev">

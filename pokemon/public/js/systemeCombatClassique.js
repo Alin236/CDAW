@@ -88,7 +88,12 @@ function sauvegarderAction(){
 
 function sauvegarderPartie(){
     partieInfo = {id: idPartie, actions: actions, gagnant: gagnant};
-    $.post({
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.put({
         url: '../combat',
         data: partieInfo,
         dateType: 'json',

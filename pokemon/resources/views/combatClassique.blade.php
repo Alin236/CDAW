@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <h1>Tour de <span>X</span></h1>
     <div class="card-deck">
         <div class="card border-primary">
@@ -125,7 +126,6 @@
             </div>
         </div>
     </div>
-    
 @endsection
 
 @section('javascript')

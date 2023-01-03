@@ -12,6 +12,11 @@ class CombatController extends Controller
         return view('menuCombat');
     }
 
+    public function initiateCombatClassique(){
+        $pokemons = Pokemon::all();
+        return view('choixCombatPokemon', Compact('pokemons'));
+    }
+    
     public function getCombatClassique(){
         $joueurs = User::whereIn('id', [1,2])->get();
         $pokemons = collect([Pokemon::whereIn('id', [1,2,3])->get()->toArray(), Pokemon::whereIn('id', [4,5,6])->get()->toArray()]);

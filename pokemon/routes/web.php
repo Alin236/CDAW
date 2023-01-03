@@ -26,7 +26,8 @@ Route::prefix('/')->group(function () {
     Route::get('/', [AccueilController::class, 'index'])->name('accueil');
     Route::get('/pokedex', [PokemonController::class, 'index'])->name('pokedex');
     Route::get('/combat', [CombatController::class, 'menu'])->middleware('auth')->name('combat');
-    Route::get('/combat/classique', [CombatController::class, 'getCombatClassique'])->middleware('auth')->name('combat classique');
+    Route::get('/combat/classique', [CombatController::class, 'initiateCombatClassique'])->middleware('auth')->name('initialise combat classique');
+    Route::post('/combat/classique', [CombatController::class, 'launchCombatClassique'])->middleware('auth')->name('combat classique');
     Route::get('/historique', function(){return view('historique');})->name('historique');
     Route::get('/test', function(){return view('test');})->middleware('auth')->name('test');
 });

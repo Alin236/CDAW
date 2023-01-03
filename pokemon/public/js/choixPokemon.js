@@ -64,6 +64,7 @@ function updateAffichage(){
 function add(pokemonId){
     pokemonsChoisi[joueurActuelIndex].push(pokemonId);
     joueurs[joueurActuelIndex].nombreDePokemon++;
+    remove(pokemonId);
     joueurSuivant();
     if(joueurs[joueurActuelIndex].nombreDePokemon == 3){
         $(".card-columns").html("");
@@ -71,6 +72,15 @@ function add(pokemonId){
         return;
     }
     updateAffichage();
+}
+
+function remove(pokemonId){
+    var indexToRemove = 0;
+    pokemons[joueurActuelIndex].forEach(function(value, i){
+        if(value.id == pokemonId)
+            indexToRemove = i;
+    })
+    pokemons[joueurActuelIndex].splice(indexToRemove, 1);
 }
 
 function fin(){

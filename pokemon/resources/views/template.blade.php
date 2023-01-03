@@ -14,7 +14,7 @@
         <div id="contenu">
             @yield('content')
         </div>
-        <footer>
+        <footer class="text-center bg-light text-muted">
             @include('footer')
         </footer>
     </body>

@@ -32,7 +32,7 @@ Voici la liste des lacunes du site :
 ## Méthode d'installation du projet
 ```
 git clone https://github.com/Alin236/CDAW.git
-cd pokemon
+cd CDAW/pokemon
 composer update
 php artisan migrate:fresh --seed
 cp .env.example .env

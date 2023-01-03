@@ -36,10 +36,11 @@ Correction à apporter :
 ## Méthode d'installation du projet
 ```
 git clone https://github.com/Alin236/CDAW.git
-cd pokemon
-composer update
-php artisan migrate:fresh --seed
+cd CDAW/pokemon
 cp .env.example .env
+composer update
+npm run dev
+php artisan migrate:fresh --seed
 ```
 
 ## Méthode pour initialiser la base de données

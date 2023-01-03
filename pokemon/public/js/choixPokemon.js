@@ -83,6 +83,7 @@ function fin(){
     $("#formInput input").eq(6).val(pokemonsChoisi[1][1]);
     $("#formInput input").eq(7).val(pokemonsChoisi[1][2]);
     $("#formInput input").eq(8).val(joueurs[joueurActuelIndex].id);
+    $("form").submit();
 }
 
 $("#choix").hide();

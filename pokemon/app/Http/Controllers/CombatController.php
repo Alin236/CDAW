@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{User, Pokemon, Battle};
+use App\Models\{User, Pokemon, Battle, Tour, Action};
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AllRequest;
@@ -81,5 +81,21 @@ class CombatController extends Controller
         $battle = Battle::find($request->idPartie);
         $battle->id_gagnant = $request->gagnant['id'];
         $battle->save();
+
+        $allAction = Action::all();
+        
+        foreach($request->actions as $action){
+            $tour = new Tour;
+            $tour->id_battle = $request->idPartie;
+            if($action == "Attaque")
+                $tour->id_action = 1;
+            if($action == "Attaque spéciale")
+                $tour->id_action = 2;
+            if($action == "Défense spéciale")
+                $tour->id_action = 3;
+            if($action == "Fuite")
+                $tour->id_action = 4;
+            $tour->save();
+        }
     }
 }

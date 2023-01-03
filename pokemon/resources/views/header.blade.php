@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="{{ route('accueil') }}">Pokémon</a>
+    <a class="navbar-brand" href="{{ route('accueil') }}">Pokémon Battle (alpha)</a>
     <div>
         @auth
             <div class="dropdown">

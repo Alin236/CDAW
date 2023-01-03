@@ -39,6 +39,7 @@ git clone https://github.com/Alin236/CDAW.git
 cd CDAW/pokemon
 cp .env.example .env
 composer update
+php artisan breeze:install
 php artisan migrate:fresh --seed
 ```
 

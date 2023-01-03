@@ -10,14 +10,12 @@
             <a href="{{ route('combat classique') }}">
                 <h3 class="card-header text-center">Combat classique</h3>
                 <div class="card-body">
-                    <h4 class="text-center text-warning">Mode de jeu en construction</h4>
                     <h5 class="card-title">Règle</h5>
                     <ul>
                         <li>3 pokémons vs 3 pokémons</li>
                         <li>Pokémons choisi</li>
                         <li>Ordre choisi par le dresseur</li>
                         <li>Tours jouer par le dresseur</li>
-                        <ul><li>Durée d'un tour : 30s</li><ul>
                     </ul>
                 </div>
             </a>

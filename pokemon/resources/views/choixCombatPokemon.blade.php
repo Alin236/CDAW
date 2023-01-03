@@ -11,7 +11,7 @@
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <label>Email : <input type="text" name="email"></label>
             <br>
-            <label>Mot de passe : <input type="text" name="password"></label>
+            <label>Mot de passe : <input type="password" name="password"></label>
             <br>
             <button type="button" class="btn btn-primary" onclick="authenticate()">Se connecter</button>
             <p class="text-danger"></p>

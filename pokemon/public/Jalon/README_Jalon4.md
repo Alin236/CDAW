@@ -62,5 +62,10 @@ http://127.0.0.1:8000
 - utilisateur 1 : alin@mail.com / admin
 - utilisateur 2 : pinky@mail.com / admin
 
+## Note
+Dans le fichier "pokemon\database\seeders\DatabaseSeeder.php", le seeder "PokemonTrueStatSeeder" permettant d'avoir les vraies énergies des pokémons, effectuent un grand nombre d'appel à l'API pokéapi. Ce seeder à donc été commenté pour ne pas gêner l'évaluation des projets et ne pas dépassé la limite du nombre d'appels faisable à pokéapi, avec le cumul des appels des projets des autres groupes.
+
+Les énergies des pokémons sont donc mis aléatoirement, et il est donc possible de ne pas pouvoir se battre s'il y a moins de 3 pokémons disponible pour un joueur. Si cela se produit, il est conseillé de relancer les seeders.
+
 ## Vidéo de démonstration
 https://www.dropbox.com/sh/c6v6dxt8lyhssgi/AACkZjURw6evabaSOGedzM7ea?dl=0

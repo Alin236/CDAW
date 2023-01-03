@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MaitriseSeeder::class);
         $this->call(BattleTypeSeeder::class);
         $this->call(ActionSeeder::class);
-        
+
+        //Le seeder suivant utilise beaucoup de fois l'API pokéapi, il a été désactiver pour ne pas poser de problème lors des évaluations
         //$this->call(PokemonTrueStatSeeder::class);
     }
 }

@@ -132,8 +132,9 @@
     <script type="text/javascript">
         let joueurs = {!! $joueurs !!};
         let pokemons = {!! $pokemons !!};
+        let joueurActuelIndex = joueurs[0].id == {{ $joueurActuel }} ? 0 : 1;
+        let idPartie = {{ $idPartie }};
         let pokemonActuelIndex = [0,0];
-        let idPartie = 1;
     </script>
     <script type="text/javascript" src="{{ asset('js/systemeCombatGeneral.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/systemeCombatClassique.js') }}"></script>

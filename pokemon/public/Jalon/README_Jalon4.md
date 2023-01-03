@@ -33,9 +33,9 @@ Voici la liste des lacunes du site :
 ```
 git clone https://github.com/Alin236/CDAW.git
 cd CDAW/pokemon
+cp .env.example .env
 composer update
 php artisan migrate:fresh --seed
-cp .env.example .env
 ```
 
 ## Méthode pour initialiser la base de données

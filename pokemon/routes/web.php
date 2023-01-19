@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     PokemonController,
     AccueilController,
     CombatController,
-    TestController
+    TestController,
+    HistoriqueController
 };
 use Illuminate\Support\Facades\Route;
 /*
@@ -30,7 +31,7 @@ Route::prefix('/')->group(function () {
     Route::post('/combat/user', [CombatController::class, 'combatChoix'])->middleware('auth');
     Route::post('/combat/classique', [CombatController::class, 'launchCombatClassique'])->middleware('auth')->name('combat classique');
     Route::put('/combat', [CombatController::class, 'save'])->middleware('auth');
-    Route::get('/historique', function(){return view('historique');})->name('historique');
+    Route::get('/historique', [HistoriqueController::class, 'index'])->middleware('auth')->name('historique');
     Route::get('/test', function(){return view('test');})->middleware('auth')->name('test');
 });
 

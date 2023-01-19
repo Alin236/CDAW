@@ -23,7 +23,10 @@ class CombatController extends Controller
 
     public function launchCombatClassique(Request $request){
 
-        $joueurs = User::whereIn('id', [$request->input('joueur1'),$request->input('joueur2')])->get();
+        $joueurs = collect([
+            User::find($request->input('joueur1')),
+            User::find($request->input('joueur2'))
+        ]);
         $pokemons = collect([
                 [
                     Pokemon::find($request->input('pokemon11')),

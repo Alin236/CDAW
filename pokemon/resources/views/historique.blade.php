@@ -26,7 +26,7 @@
                         <img src="{{ $battle->pokemonJ1numero2->path }}">
                         <img src="{{ $battle->pokemonJ1numero1->path }}">
                     </td>
-                    <td>Classique</td>
+                    <td>{{ $battle->battleType->name }}</td>
                     <td>
                         <img src="{{ $battle->pokemonJ2numero1->path }}">
                         <img src="{{ $battle->pokemonJ2numero2->path }}">

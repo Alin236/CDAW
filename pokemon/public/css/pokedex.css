@@ -20,3 +20,7 @@ div.dt-buttons {
     vertical-align: bottom;
     margin-bottom: 0;
 }
+
+#pokedex_wrapper {
+    background: white;
+}

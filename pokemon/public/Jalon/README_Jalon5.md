@@ -11,3 +11,6 @@ La bonne version à évaluer est labellé tagué [v0.3.0-alpha](https://github.c
 
 ## Description
 
+### Changement
+
+- Amélioration du visuel

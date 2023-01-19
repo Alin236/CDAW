@@ -34,13 +34,16 @@
             <input type="text" name="pokemon22">
             <input type="text" name="pokemon23">
             <input type="text" name="firstJoueur">
-            <input type="text" name="battleType" value="{{ $battleType->id }}">
+            <input type="text" name="battleType">
         </div>
     </form>
 @endsection
 
 @section('javascript')
     <script type="text/javascript" src="{{ asset('js/choixPokemon.js') }}"></script>
+    <script type="text/javascript">
+        battleType = {!! $battleType !!}
+    </script>
 @endsection
 
 @section('navbarActiveIndex')

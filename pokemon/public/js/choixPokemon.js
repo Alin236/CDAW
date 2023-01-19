@@ -27,10 +27,17 @@ function authenticate(){
             joueurs[0].nombreDePokemon = 0;
             joueurs[1].nombreDePokemon = 0;
             updateAffichage();
-            $("#choix").show();
+            if(battleType.id == 1){
+                $("#choix").show();
+            }
+            else{
+                choixAleatoire()
+            }
         },
     })
 }
+
+let battleType = 0;
 
 function joueurSuivant(){
     joueurActuelIndex = (joueurActuelIndex+1)%2;
@@ -84,16 +91,26 @@ function remove(pokemonId){
 }
 
 function fin(){
-    $("#formInput input").eq(0).val(joueurs[0].id);
-    $("#formInput input").eq(1).val(joueurs[1].id);
-    $("#formInput input").eq(2).val(pokemonsChoisi[0][0]);
-    $("#formInput input").eq(3).val(pokemonsChoisi[0][1]);
-    $("#formInput input").eq(4).val(pokemonsChoisi[0][2]);
-    $("#formInput input").eq(5).val(pokemonsChoisi[1][0]);
-    $("#formInput input").eq(6).val(pokemonsChoisi[1][1]);
-    $("#formInput input").eq(7).val(pokemonsChoisi[1][2]);
-    $("#formInput input").eq(8).val(joueurs[joueurActuelIndex].id);
+    form = $("#formInput input")
+    form.eq(0).val(joueurs[0].id);
+    form.eq(1).val(joueurs[1].id);
+    form.eq(2).val(pokemonsChoisi[0][0]);
+    form.eq(3).val(pokemonsChoisi[0][1]);
+    form.eq(4).val(pokemonsChoisi[0][2]);
+    form.eq(5).val(pokemonsChoisi[1][0]);
+    form.eq(6).val(pokemonsChoisi[1][1]);
+    form.eq(7).val(pokemonsChoisi[1][2]);
+    form.eq(8).val(joueurs[joueurActuelIndex].id);
+    form.eq(9).val(battleType.id);
     $("form").submit();
 }
 
 $("#choix").hide();
+
+function choixAleatoire(){
+    $pokemonChoisi = pokemons[joueurActuelIndex][Math.floor(Math.random() * pokemons[joueurActuelIndex].length)];
+    add($pokemonChoisi.id);
+    if(joueurs[joueurActuelIndex].nombreDePokemon != 3){
+        choixAleatoire()
+    }
+}

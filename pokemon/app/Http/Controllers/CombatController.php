@@ -21,6 +21,11 @@ class CombatController extends Controller
         return view('choixCombatPokemon', Compact('battleType'));
     }
 
+    public function initiateCombatSemiAutomatique(){
+        $battleType = BattleType::find(2);
+        return view('choixCombatPokemon', Compact('battleType'));
+    }
+    
     public function launchCombatClassique(Request $request){
 
         $joueurs = collect([
@@ -56,6 +61,10 @@ class CombatController extends Controller
         $battle->save();
         $idPartie = $battle->id;
         return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel', 'idPartie'));
+    }
+
+    public function launchCombatSemiAutomatique(Request $request){
+        return self::launchCombatClassique($request);
     }
 
     public function combatChoix(Request $request){

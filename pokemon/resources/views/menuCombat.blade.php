@@ -7,7 +7,7 @@
 @section('content')
     <div class="card-deck">
         <div class="card">
-            <a href="{{ route('combat classique') }}">
+            <a href="{{ route('initialise combat classique') }}">
                 <h3 class="card-header text-center">Combat classique</h3>
                 <div class="card-body">
                     <h5 class="card-title">Règle</h5>
@@ -21,10 +21,9 @@
             </a>
         </div>
         <div class="card">
-            <a href="">
+            <a href="{{ route('initialise combat semi-automatique') }}">
                 <h3 class="card-header text-center">Combat semi-automatique</h3>
                 <div class="card-body">
-                    <h4 class="text-center text-warning">Mode de jeu à venir</h4>
                     <h5 class="card-title">Règle</h5>
                     <ul>
                         <li>3 pokémons vs 3 pokémons</li>
@@ -60,8 +59,7 @@
             return false;
         }
 
-        $('.card a').attr('onclick', 'return modeAVenir()');
-        $('.card:first a').attr('onclick', '');
+        $('.card:last a').attr('onclick', 'return modeAVenir()');
     </script>
 @endsection
 

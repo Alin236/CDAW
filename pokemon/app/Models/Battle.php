@@ -67,4 +67,9 @@ class Battle extends Model
     {
         return $this->belongsTo(User::class, 'id_gagnant');
     }
+
+    public function battleType()
+    {
+        return $this->belongsTo(BattleType::class, 'id_battle_type');
+    }
 }

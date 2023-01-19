@@ -34,6 +34,7 @@
             <input type="text" name="pokemon22">
             <input type="text" name="pokemon23">
             <input type="text" name="firstJoueur">
+            <input type="text" name="battleType" value="{{ $battleType->id }}">
         </div>
     </form>
 @endsection

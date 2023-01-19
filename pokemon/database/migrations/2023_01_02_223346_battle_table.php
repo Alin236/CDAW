@@ -67,6 +67,11 @@ return new class extends Migration
                 ->on('pokemon')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
+            $table->foreignId('id_battle_type')
+                ->references('id')
+                ->on('battle_type')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
             $table->timestamps();
         });
     }

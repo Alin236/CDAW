@@ -4,7 +4,7 @@ $(document).ready( function () {
     });
     $('#divSwitch').appendTo('.dt-buttons');
     $('#switch').attr('onclick', 'afficheMesPokemons(this)');
-    $('#labelSwitch2').css('color', 'lightgray');
+    $('#labelSwitch2').css('color', 'darkgray');
 
     $('#box').hide();
 
@@ -37,12 +37,12 @@ let mesMaitrise = '';
 function afficheMesPokemons(){
     if($('#pokedex').DataTable().column(2).search() == ''){
         $('#pokedex').DataTable().column(2).search(mesMaitrise, true).draw();
-        $('#labelSwitch1').css('color', 'lightgray');
+        $('#labelSwitch1').css('color', 'darkgray');
         $('#labelSwitch2').css('color', 'black');
     }
     else{
         $('#pokedex').DataTable().column(2).search('').draw();
         $('#labelSwitch1').css('color', 'black');
-        $('#labelSwitch2').css('color', 'lightgray');
+        $('#labelSwitch2').css('color', 'darkgray');
     }
 }

@@ -8,7 +8,8 @@ const Action = {
     attaque: 'Attaque',
     attaqueSpe: 'Attaque spéciale',
     defenseSpe: 'Défense spéciale',
-    fuite: 'Fuite'
+    fuite: 'Fuite',
+    automatique: 'Automatique'
 };
 const Game = {
     enCours: "en cours",
@@ -17,7 +18,7 @@ const Game = {
 let game = Game.enCours;
 let gagnant;
 //let idPartie;
-let idBattleType;
+//let idBattleType;
 
 pokemons.forEach(pokemonJ => {
     pokemonJ.forEach(pokemon => {
@@ -46,6 +47,9 @@ function faireAction(){
             break;
         case Action.fuite:
             faireFuite();
+            break;
+        case Action.automatique:
+            faireAutomatique();
             break;
     }
 }
@@ -193,6 +197,8 @@ function afficherInterfaceDuJoueur(joueurIndex){
         buttons.attr("disabled", "true");
         return;
     }
+    if(idBattleType == 3)
+        return;
     pokemon = getPokemonOfJoueur(joueurIndex);
     if(pokemon.pt.special_attack == 0)
         buttons.eq(1).attr("disabled", "true");
@@ -229,4 +235,24 @@ function sauvegarderPartie(){
             console.log(data);
         }
     })
+}
+
+function faireAutomatique(){
+    pokemonActuel = getPokemonOfJoueur(joueurActuelIndex)
+    if(pokemonActuel.pt.special_attack != 0){
+        action = Action.attaqueSpe;
+        faireAttaqueSpe();
+        return;
+    }
+    if(pokemonActuel.pt.special_defense != 0){
+        action = Action.defenseSpe;
+        faireDefenseSpe();
+        return;
+    }
+    action = Action.attaque;
+    faireAttaque();
+}
+
+if(idBattleType == 3){
+    $("#commandeBox button").attr("onclick", "jouer(Action.automatique)").html("Automatique");
 }

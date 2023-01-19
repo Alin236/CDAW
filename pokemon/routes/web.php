@@ -33,6 +33,8 @@ Route::prefix('/')->group(function () {
     Route::put('/combat', [CombatController::class, 'save'])->middleware('auth');
     Route::get('/combat/semi_automatique', [CombatController::class, 'initiateCombatSemiAutomatique'])->middleware('auth')->name('initialise combat semi-automatique');
     Route::post('/combat/semi_automatique', [CombatController::class, 'launchCombatSemiAutomatique'])->middleware('auth')->name('combat semi-automatique');
+    Route::get('/combat/automatique', [CombatController::class, 'initiateCombatAutomatique'])->middleware('auth')->name('initialise combat automatique');
+    Route::post('/combat/automatique', [CombatController::class, 'launchCombatAutomatique'])->middleware('auth')->name('combat automatique');
     Route::get('/historique', [HistoriqueController::class, 'index'])->middleware('auth')->name('historique');
     Route::get('/test', function(){return view('test');})->middleware('auth')->name('test');
 });

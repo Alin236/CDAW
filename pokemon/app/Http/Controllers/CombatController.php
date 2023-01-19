@@ -25,6 +25,11 @@ class CombatController extends Controller
         $battleType = BattleType::find(2);
         return view('choixCombatPokemon', Compact('battleType'));
     }
+
+    public function initiateCombatAutomatique(){
+        $battleType = BattleType::find(3);
+        return view('choixCombatPokemon', Compact('battleType'));
+    }
     
     public function launchCombatClassique(Request $request){
 
@@ -45,7 +50,7 @@ class CombatController extends Controller
                 ]
             ]);
         $joueurActuel = $request->input('firstJoueur');
-        $battleType = $request->input('battleType');
+        $idBattleType = $request->input('battleType');
 
         $battle = new Battle;
         $battle->id_joueur_1 = $joueurs[0]->id;
@@ -57,13 +62,17 @@ class CombatController extends Controller
         $battle->id_pokemon_J2_1 = $pokemons[1][0]['id'];
         $battle->id_pokemon_J2_2 = $pokemons[1][1]['id'];
         $battle->id_pokemon_J2_3 = $pokemons[1][2]['id'];
-        $battle->id_battle_type = $battleType;
+        $battle->id_battle_type = $idBattleType;
         $battle->save();
         $idPartie = $battle->id;
-        return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel', 'idPartie'));
+        return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel', 'idPartie', 'idBattleType'));
     }
 
     public function launchCombatSemiAutomatique(Request $request){
+        return self::launchCombatClassique($request);
+    }
+
+    public function launchCombatAutomatique(Request $request){
         return self::launchCombatClassique($request);
     }
 

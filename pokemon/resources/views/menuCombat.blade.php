@@ -35,10 +35,9 @@
             </a>
         </div>
         <div class="card">
-            <a href="">
+            <a href="{{ route('initialise combat automatique') }}">
                 <h3 class="card-header text-center">Combat automatique</h3>
                 <div class="card-body">
-                    <h4 class="text-center text-warning">Mode de jeu à venir</h4>
                     <h5 class="card-title">Règle</h5>
                     <ul>
                         <li>3 pokémons vs 3 pokémons</li>
@@ -50,17 +49,6 @@
             </a>
         </div>
     </div>
-@endsection
-
-@section('javascript')
-    <script type="text/javascript">
-        function modeAVenir(){
-            alert('Mode de jeu indisponible');
-            return false;
-        }
-
-        $('.card:last a').attr('onclick', 'return modeAVenir()');
-    </script>
 @endsection
 
 @section('navbarActiveIndex')

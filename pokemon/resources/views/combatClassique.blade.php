@@ -135,10 +135,9 @@
         let joueurActuelIndex = joueurs[0].id == {{ $joueurActuel }} ? 0 : 1;
         let idPartie = {{ $idPartie }};
         let pokemonActuelIndex = [0,0];
+        let idBattleType = {{ $idBattleType }}
     </script>
-    <script type="text/javascript" src="{{ asset('js/systemeCombatGeneral.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/systemeCombatClassique.js') }}"></script>
-    
+    <script type="text/javascript" src="{{ asset('js/systemeCombat.js') }}"></script>
 @endsection
 
 @section('navbarActiveIndex')

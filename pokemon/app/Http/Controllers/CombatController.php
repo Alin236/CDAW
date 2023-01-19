@@ -20,12 +20,22 @@ class CombatController extends Controller
         $battleType = BattleType::find(1);
         return view('choixCombatPokemon', Compact('battleType'));
     }
-    
+
     public function launchCombatClassique(Request $request){
 
         $joueurs = User::whereIn('id', [$request->input('joueur1'),$request->input('joueur2')])->get();
-        $pokemons = collect([Pokemon::whereIn('id', [$request->input('pokemon11'),$request->input('pokemon12'),$request->input('pokemon13')])->get()->toArray(),
-            Pokemon::whereIn('id', [$request->input('pokemon21'),$request->input('pokemon22'),$request->input('pokemon23')])->get()->toArray()]);
+        $pokemons = collect([
+                [
+                    Pokemon::find($request->input('pokemon11')),
+                    Pokemon::find($request->input('pokemon12')),
+                    Pokemon::find($request->input('pokemon13'))
+                ],
+                [
+                    Pokemon::find($request->input('pokemon21')),
+                    Pokemon::find($request->input('pokemon22')),
+                    Pokemon::find($request->input('pokemon23'))
+                ]
+            ]);
         $joueurActuel = $request->input('firstJoueur');
         $battleType = $request->input('battleType');
 

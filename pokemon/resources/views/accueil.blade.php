@@ -1,5 +1,9 @@
 @extends('template')
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/accueil.css') }}"/>
+@endsection
+
 @section('content')
     <h1 class="text-center">Les news :</h1>
     <div id="carousel" class="carousel slide" data-ride="carousel">

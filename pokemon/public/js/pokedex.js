@@ -1,7 +1,20 @@
+let level = 0;
 $(document).ready( function () {
     $('#pokedex').DataTable({
         dom : 'lfBrtip',
+        columnDefs: [{
+                target: 4,
+                visible: false,
+            }]
     });
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex){
+        if($('#pokedex').DataTable().column(2).search() == ''){
+            return true;
+        }
+        if(level < data[4])
+            return false;
+        return true;
+    })
     $('#divSwitch').appendTo('.dt-buttons');
     $('#switch').attr('onclick', 'afficheMesPokemons(this)');
     $('#labelSwitch2').css('color', 'darkgray');

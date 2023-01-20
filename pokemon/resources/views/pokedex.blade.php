@@ -23,6 +23,7 @@
                 <th>Nom</th>
                 <th>Type</th>
                 <th>Image</th>
+                <th>Level</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +33,7 @@
                     <td>{{ $pokemon->name }}</td>
                     <td>{{ $pokemon->energy->name }}</td>
                     <td><img src="{{ $pokemon->path }}"></td>
+                    <td>{{ $pokemon->level }}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -61,6 +63,8 @@
                 mesMaitrise += "{{ $energy->name }}" + "|";
             @endforeach
             mesMaitrise = mesMaitrise.slice(0, -1);
+
+            level = {{ Auth::user()->level }};
         @else
             $(document).ready( function () {
                 $(".dt-button:first").hide();

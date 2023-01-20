@@ -19,6 +19,7 @@ La bonne version à évaluer est labellé tagué [v0.3.0-alpha](https://github.c
 - Mode de jeux automatique fonctionnel
 - Replay fonctionnel
 - Système de récompense fonctionnel
+- Affichage des stats du joueur sur son profil
 - Bug fixé :
     - Le level du joueur n'était pas prie en compte dans le pokédex
     - Les nouveaux joueurs n'avaient pas d'énergie maitrisée

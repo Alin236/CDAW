@@ -54,13 +54,28 @@ class Battle extends Model
 
     public function pokemons()
     {
-        return collect([Pokemon::whereIn('id', [$this->id_pokemon_J1_1,$this->id_pokemon_J1_2,$this->id_pokemon_J1_3])->get()->toArray(),
-        Pokemon::whereIn('id', [$this->id_pokemon_J2_1,$this->id_pokemon_J2_2,$this->id_pokemon_J2_3])->get()->toArray()]);
+        $pokemons = collect([
+            [
+                Pokemon::find($this->id_pokemon_J1_1),
+                Pokemon::find($this->id_pokemon_J1_2),
+                Pokemon::find($this->id_pokemon_J1_3)
+            ],
+            [
+                Pokemon::find($this->id_pokemon_J2_1),
+                Pokemon::find($this->id_pokemon_J2_2),
+                Pokemon::find($this->id_pokemon_J2_3)
+            ]
+        ]);
+        return $pokemons;
     }
 
     public function joueurs()
     {
-        return User::whereIn('id', [$this->id_joueur_1,$this->id_joueur_2])->get();
+        $joueurs = collect([
+            User::find($this->id_joueur_1),
+            User::find($this->id_joueur_2)
+        ]);
+        return $joueurs;
     }
 
     public function gagnant()
@@ -71,5 +86,10 @@ class Battle extends Model
     public function battleType()
     {
         return $this->belongsTo(BattleType::class, 'id_battle_type');
+    }
+
+    public function tours()
+    {
+        return $this->hasMany(Tour::class, 'id_battle');
     }
 }

@@ -32,7 +32,6 @@ class CombatController extends Controller
     }
     
     public function launchCombatClassique(Request $request){
-
         $joueurs = collect([
             User::find($request->input('joueur1')),
             User::find($request->input('joueur2'))
@@ -130,5 +129,16 @@ class CombatController extends Controller
                 $tour->id_action = 4;
             $tour->save();
         }
+    }
+
+    public function launchCombatReplay(Int $idBattle){
+        $battle = Battle::find($idBattle);
+        $joueurs = $battle->joueurs();
+        $pokemons = $battle->pokemons();
+        $joueurActuel = $battle->firstJoueur->id;
+        $idBattleType = 4;
+        $idPartie = $battle->id;
+        $tours = $battle->tours;
+        return view('combatClassique', Compact('joueurs', 'pokemons', 'joueurActuel', 'idPartie', 'idBattleType', 'tours'));
     }
 }

@@ -9,7 +9,8 @@ const Action = {
     attaqueSpe: 'Attaque spéciale',
     defenseSpe: 'Défense spéciale',
     fuite: 'Fuite',
-    automatique: 'Automatique'
+    automatique: 'Automatique',
+    replay: 'Replay'
 };
 const Game = {
     enCours: "en cours",
@@ -19,6 +20,7 @@ let game = Game.enCours;
 let gagnant;
 //let idPartie;
 //let idBattleType;
+//let actionsReplay;
 
 pokemons.forEach(pokemonJ => {
     pokemonJ.forEach(pokemon => {
@@ -50,6 +52,9 @@ function faireAction(){
             break;
         case Action.automatique:
             faireAutomatique();
+            break;
+        case Action.replay:
+            faireReplay();
             break;
     }
 }
@@ -100,6 +105,7 @@ function faireDefenseSpe(){
 }
 
 function faireFuite(){
+    sauvegarderAction();
     description = joueurs[joueurActuelIndex].name + " fuit le combat<br>"
     gagnant = joueurs[joueurAdverseIndex];
     fin();
@@ -124,11 +130,8 @@ function pokemonAdverseSuivant(){
 function fin(){
     game = Game.fini;
     description += gagnant.name + ' est le vainqueur<br><a class="btn btn-success" href=".." role="button">Retour</a>'
-    sauvegarderPartie();
-}
-
-function sauvegarderPartie(){
-    return false;
+    if(idBattleType != 4)
+        sauvegarderPartie();
 }
 
 function jouer(actionChoisi){
@@ -137,11 +140,13 @@ function jouer(actionChoisi){
     }
     action = actionChoisi;
     faireAction();
+    sauvegarderAction();
     if(pokemonAdverseIsDead()){
         pokemonAdverseSuivant();
     }
     joueurSuivant();
-    sauvegarderAction();
+    if(idBattleType == 4 && game != Game.fini)
+        checkReplayFini();
     updateAffichage();
 }
 
@@ -197,7 +202,7 @@ function afficherInterfaceDuJoueur(joueurIndex){
         buttons.attr("disabled", "true");
         return;
     }
-    if(idBattleType == 3)
+    if(idBattleType == 3 || idBattleType == 4)
         return;
     pokemon = getPokemonOfJoueur(joueurIndex);
     if(pokemon.pt.special_attack == 0)
@@ -211,6 +216,13 @@ function afficherDescription(){
 }
 
 $(document).ready(function(){
+    if(idBattleType == 3){
+        $("#commandeBox button").attr("onclick", "jouer(Action.automatique)").html("Automatique");
+    }
+    if(idBattleType == 4){
+        $("#commandeBox button").attr("onclick", "jouer(Action.replay)").html("Replay");
+        checkReplayFini();
+    }
     updateAffichage();
 })
 
@@ -253,6 +265,15 @@ function faireAutomatique(){
     faireAttaque();
 }
 
-if(idBattleType == 3){
-    $("#commandeBox button").attr("onclick", "jouer(Action.automatique)").html("Automatique");
+function checkReplayFini(){
+    if(actionsReplay.length == 0){
+        game = Game.fini;
+        description = 'Match non fini<br>Match non enregistré<br><a class="btn btn-success" href=".." role="button">Retour</a>'
+    }
+}
+
+function faireReplay(){
+    action = actionsReplay[0];
+    actionsReplay.splice(0, 1);
+    faireAction();
 }

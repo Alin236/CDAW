@@ -36,6 +36,7 @@ Route::prefix('/')->group(function () {
     Route::get('/combat/automatique', [CombatController::class, 'initiateCombatAutomatique'])->middleware('auth')->name('initialise combat automatique');
     Route::post('/combat/automatique', [CombatController::class, 'launchCombatAutomatique'])->middleware('auth')->name('combat automatique');
     Route::get('/historique', [HistoriqueController::class, 'index'])->middleware('auth')->name('historique');
+    Route::get('/combat/replay/{idBattle}', [CombatController::class, 'launchCombatReplay'])->name('replay');
     Route::get('/test', function(){return view('test');})->middleware('auth')->name('test');
 });
 

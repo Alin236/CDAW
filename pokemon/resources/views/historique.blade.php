@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             @foreach($battles as $battle)
-                <tr class="{{ $battle->gagnant == null ? 'win-null' : ($battle->gagnant == $battle->joueur1 ? 'win-j1' : 'win-j2') }}">
+                <tr onclick="location.assign('{{ route('replay', ['idBattle' => $battle->id]) }}')" class="{{ $battle->gagnant == null ? 'win-null' : ($battle->gagnant == $battle->joueur1 ? 'win-j1' : 'win-j2') }}">
                     <td>{{ $battle->joueur1->name }}</td>
                     <td class="pokemons-j1">
                         <img src="{{ $battle->pokemonJ1numero3->path }}">

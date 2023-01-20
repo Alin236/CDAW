@@ -138,6 +138,15 @@
         let idBattleType = {{ $idBattleType }}
     </script>
     <script type="text/javascript" src="{{ asset('js/systemeCombat.js') }}"></script>
+    @if($idBattleType == 4)
+        <script type="text/javascript">
+            let actionsReplay = {{ $tours->transform(function($tour){return $tour->id_action;}) }}
+            let dicoAction = [Action.attaque, Action.attaqueSpe, Action.defenseSpe, Action.fuite]
+            actionsReplay.forEach(function(idAction, i){
+                actionsReplay[i] = dicoAction[idAction-1];
+            })
+        </script>
+    @endif
 @endsection
 
 @section('navbarActiveIndex')

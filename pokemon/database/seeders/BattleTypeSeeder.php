@@ -18,5 +18,6 @@ class BattleTypeSeeder extends Seeder
         DB::table('battle_type')->insert(['name' => 'Classique']);
         DB::table('battle_type')->insert(['name' => 'Semi-automatique']);
         DB::table('battle_type')->insert(['name' => 'Automatique']);
+        DB::table('battle_type')->insert(['name' => 'Replay']);
     }
 }

@@ -16,7 +16,9 @@
                     <li>Defense : <span></span></li>
                 </ul>
                 <hr class="hr border-primary" />
-                <img src="">
+                <div class="text-center">
+                    <img src="">
+                </div>
                 <hr class="hr border-primary" />
                 <ul>
                     <li>Attaque : <span></span></li>
@@ -33,7 +35,9 @@
                     <li>Defense : <span></span></li>
                 </ul>
                 <hr class="hr border-primary" />
-                <img src="">
+                <div class="text-center">
+                    <img src="">
+                </div>
                 <hr class="hr border-primary" />
                 <ul>
                     <li>Attaque : <span></span></li>
@@ -50,7 +54,9 @@
                     <li>Defense : <span></span></li>
                 </ul>
                 <hr class="hr border-primary" />
-                <img src="">
+                <div class="text-center">
+                    <img src="">
+                </div>
                 <hr class="hr border-primary" />
                 <ul>
                     <li>Attaque : <span></span></li>
@@ -82,7 +88,9 @@
                     <li>Defense : <span></span></li>
                 </ul>
                 <hr class="hr border-danger" />
-                <img src="">
+                <div class="text-center">
+                    <img src="">
+                </div>
                 <hr class="hr border-danger" />
                 <ul>
                     <li>Attaque : <span></span></li>
@@ -99,7 +107,9 @@
                     <li>Defense : <span></span></li>
                 </ul>
                 <hr class="hr border-danger" />
-                <img src="">
+                <div class="text-center">
+                    <img src="">
+                </div>
                 <hr class="hr border-danger" />
                 <ul>
                     <li>Attaque : <span></span></li>
@@ -116,7 +126,9 @@
                     <li>Defense : <span></span></li>
                 </ul>
                 <hr class="hr border-danger" />
-                <img src="">
+                <div class="text-center">
+                    <img src="">
+                </div>
                 <hr class="hr border-danger" />
                 <ul>
                     <li>Attaque : <span></span></li>

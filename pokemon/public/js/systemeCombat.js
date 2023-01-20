@@ -168,7 +168,7 @@ function afficherPokemonCard(card, pokemon){
     baliseActuel = $(card).children();
     baliseActuel.eq(0).html(pokemon.name);
     baliseActuel = baliseActuel.eq(1).children();
-    baliseActuel.eq(2).attr("src",pokemon.path);
+    baliseActuel.eq(2).children().attr("src",pokemon.path);
     baliseActuel = baliseActuel.children().children();
     baliseActuel.eq(0).html(pokemon.pv + "/" + pokemon.pv_max);
     baliseActuel.eq(1).html(pokemon.defense);

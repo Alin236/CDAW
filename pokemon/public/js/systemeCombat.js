@@ -196,7 +196,7 @@ function afficherInterfaceDuJoueur(joueurIndex){
     $("h1").addClass("text-" + joueurActuelColor).removeClass("text-" + joueurAdverseColor);
     $(".commande button").addClass("btn-" + joueurActuelColor).removeClass("btn-" + joueurAdverseColor);
 
-    buttons = $("#commandeBox button");
+    buttons = $(".commande button");
     buttons.removeAttr("disabled");
     if(game == Game.fini){
         buttons.attr("disabled", "true");
@@ -244,7 +244,9 @@ function sauvegarderPartie(){
         data: partieInfo,
         dateType: 'text',
         success: function(data){
-            console.log(data);
+            recompense = data;
+            description += '<button class="btn btn-success" onclick="afficheRecompense()" role="button">Resultat</button>'
+            updateAffichage();
         }
     })
 }
@@ -276,4 +278,23 @@ function faireReplay(){
     action = actionsReplay[0];
     actionsReplay.splice(0, 1);
     faireAction();
+}
+
+let recompense = {};
+function afficheRecompense(){
+    nomDuGagnant = recompense.joueur;
+    nombreDeVictoire = recompense.victoire;
+    level = recompense.level;
+    energie = recompense.energie;
+    description = "Gagnant : " + nomDuGagnant + "<br>Nombre de victoire : " + nombreDeVictoire + "<br>";
+    if(energie == undefined){
+        description += 'Pas de récompense<br><a class="btn btn-success" href=".." role="button">Retour</a>'
+        updateAffichage();
+        return;
+    }
+    if(level != undefined){
+        description += "Level : " + level + "<br>";
+    }
+    description += "Energie : " + energie + '<br><a class="btn btn-success" href=".." role="button">Retour</a>';
+    updateAffichage();
 }

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->integer('level')->default(1);
+            $table->integer('victoire')->default(0);
         });
     }
 

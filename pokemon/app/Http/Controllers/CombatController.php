@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{User, Pokemon, Battle, Tour, Action, BattleType};
+use App\Models\{User, Pokemon, Battle, Tour, Action, BattleType, Energy};
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AllRequest;
@@ -129,6 +129,31 @@ class CombatController extends Controller
                 $tour->id_action = 4;
             $tour->save();
         }
+        
+        $recompense = self::recompense($battle->id_gagnant);
+        return $recompense;
+    }
+
+    public function recompense(Int $idJoueur){
+        $joueur = User::find($idJoueur);
+        $joueur->victoire++;
+        $joueur->update(['victoire' => $joueur->victoire]);
+        if($joueur->victoire > 90){
+            return ['joueur' => $joueur->name, 'victoire' => $joueur->victoire, 'level' => 'Max', 'energie' => 'Max'];
+        }
+        if($joueur->victoire%5 == 0){
+            $energies = Energy::all()->diff($joueur->energies);
+            $energies = $energies->diff([Energy::find(19)]);
+            $energy = $energies->random();
+            $joueur->energies()->attach($energy);
+            if($joueur->victoire%10 == 0){
+                $joueur->level++;
+                $joueur->update(['level' => $joueur->level]);
+                return ['joueur' => $joueur->name, 'victoire' => $joueur->victoire, 'level' => $joueur->level, 'energie' => $energy->name];
+            }
+            return ['joueur' => $joueur->name, 'victoire' => $joueur->victoire, 'energie' => $energy->name];
+        }
+        return ['joueur' => $joueur->name, 'victoire' => $joueur->victoire];
     }
 
     public function launchCombatReplay(Int $idBattle){

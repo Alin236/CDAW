@@ -20,6 +20,28 @@
                     <div class="max-w-xl">
                         <section>
                             <header>
+                                <h2 class="text-lg font-medium text-gray-900">Level :</h2>
+                            </header>
+                            <div>
+                                <p>{{ $user->level }}/10</p>
+                            </div>
+                        </section>
+                    </div>
+                    <br>
+                    <div class="max-w-xl">
+                        <section>
+                            <header>
+                                <h2 class="text-lg font-medium text-gray-900">Victoire :</h2>
+                            </header>
+                            <div>
+                                <p>{{ $user->victoire }}</p>
+                            </div>
+                        </section>
+                    </div>
+                    <br>
+                    <div class="max-w-xl">
+                        <section>
+                            <header>
                                 <h2 class="text-lg font-medium text-gray-900">Energies maîtrisées :</h2>
                             </header>
                             <div>
@@ -31,7 +53,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        <section>
+                        </section>
                     </div>
                 </div>
 

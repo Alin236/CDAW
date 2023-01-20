@@ -10,10 +10,18 @@
         <ol class="carousel-indicators">
             <li class="active"></li>
             <li></li>
+            <li></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/pokemon_SV.png') }}">
+                <a href="https://scarletviolet.pokemon.com">
+                    <img class="d-block w-100" src="{{ asset('img/pokemon_SV.png') }}">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="https://www.pokeclicker.com">
+                    <img class="d-block w-100" src="{{ asset('img/pokeclickerlogo.png') }}">
+                </a>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="{{ asset('img/pokemon_pub.png') }}">

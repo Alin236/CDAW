@@ -18,3 +18,5 @@ La bonne version à évaluer est labellé tagué [v0.3.0-alpha](https://github.c
 - Mode de jeux semi-automatique fonctionnel
 - Mode de jeux automatique fonctionnel
 - Replay fonctionnel
+- Bug fixé :
+    - Le level du joueur est désormais prie en compte dans le pokédex

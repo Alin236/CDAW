@@ -14,4 +14,7 @@ La bonne version à évaluer est labellé tagué [v0.3.0-alpha](https://github.c
 ### Changement
 
 - Amélioration du visuel
-- Historique fonctionnel (sans replay)
+- Historique fonctionnel
+- Mode de jeux semi-automatique fonctionnel
+- Mode de jeux automatique fonctionnel
+- Replay fonctionnel

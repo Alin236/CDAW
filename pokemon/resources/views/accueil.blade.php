@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center">Les news :</h1>
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -33,6 +32,17 @@
         <a class="carousel-control-next" href="#carousel" data-slide="next">
             <span class="carousel-control-next-icon"></span>
         </a>
+    </div>
+    <h2 class="text-center">Derniers pokémons sortis :</h2>
+    <div class="card-deck">
+        @foreach($pokemons as $pokemon)
+            <div class="card shadow">
+                <h3 class="card-header text-center">{{ $pokemon->name }}</h3>
+                <div class="card-body text-center">
+                    <img src="{{ $pokemon->path }}">
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection
 

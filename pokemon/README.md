@@ -1,1 +1,1 @@
-Le dossier public contient les explications et les jalons du projets
+Le dossier public contient les explications et les jalons du projet

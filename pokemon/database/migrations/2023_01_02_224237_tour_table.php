@@ -23,7 +23,7 @@ return new class extends Migration
                 ->onDelete('restrict');
             $table->foreignId('id_action')
                 ->references('id')
-                ->on('battle')
+                ->on('action')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
             $table->timestamps();

@@ -129,7 +129,7 @@ function pokemonAdverseSuivant(){
 
 function fin(){
     game = Game.fini;
-    description += gagnant.name + ' est le vainqueur<br><a class="btn btn-success" href=".." role="button">Retour</a>'
+    description += gagnant.name + ' est le vainqueur<br><a class="btn btn-danger" href=".." role="button">Retour</a>'
     if(idBattleType != 4)
         sauvegarderPartie();
 }
@@ -245,7 +245,8 @@ function sauvegarderPartie(){
         dateType: 'text',
         success: function(data){
             recompense = data;
-            description += '<button class="btn btn-success" onclick="afficheRecompense()" role="button">Resultat</button>'
+            description += '<button class="btn btn-success" onclick="afficheRecompense()" role="button">Resultat</button>';
+            description += '<button class="btn btn-info" onclick="location.reload()" role="button">Rejouer</button>'
             updateAffichage();
         }
     })
@@ -270,7 +271,7 @@ function faireAutomatique(){
 function checkReplayFini(){
     if(actionsReplay.length == 0){
         game = Game.fini;
-        description = 'Match non fini<br>Match non enregistré<br><a class="btn btn-success" href=".." role="button">Retour</a>'
+        description = 'Match non fini<br>Match non enregistré<br><a class="btn btn-danger" href=".." role="button">Retour</a>'
     }
 }
 
@@ -288,13 +289,15 @@ function afficheRecompense(){
     energie = recompense.energie;
     description = "Gagnant : " + nomDuGagnant + "<br>Nombre de victoire : " + nombreDeVictoire + "<br>";
     if(energie == undefined){
-        description += 'Pas de récompense<br><a class="btn btn-success" href=".." role="button">Retour</a>'
+        description += 'Pas de récompense<br><a class="btn btn-danger" href=".." role="button">Retour</a>'
+        description += '<button class="btn btn-info" onclick="location.reload()" role="button">Rejouer</button>'
         updateAffichage();
         return;
     }
     if(level != undefined){
         description += "Level : " + level + "<br>";
     }
-    description += "Energie : " + energie + '<br><a class="btn btn-success" href=".." role="button">Retour</a>';
+    description += "Energie : " + energie + '<br><a class="btn btn-danger" href=".." role="button">Retour</a>';
+    description += '<button class="btn btn-info" onclick="location.reload()" role="button">Rejouer</button>'
     updateAffichage();
 }

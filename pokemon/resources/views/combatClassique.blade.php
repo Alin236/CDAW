@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <h1>Tour de <span>X</span></h1>
     <div class="card-deck">
-        <div class="card border-primary">
+        <div class="card border-primary shadow">
             <h5 class="card-header text-center border-primary"></h5>
             <div class="card-body">
                 <ul>
@@ -25,7 +25,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card border-primary">
+        <div class="card border-primary shadow">
             <h5 class="card-header text-center border-primary"></h5>
             <div class="card-body">
                 <ul>
@@ -42,7 +42,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card border-primary">
+        <div class="card border-primary shadow">
             <h5 class="card-header text-center border-primary"></h5>
             <div class="card-body">
                 <ul>
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <div id="commandeBox">
+    <div id="commandeBox" class="bg-white">
         <div class="commande">
             <button onclick="jouer(Action.attaque)" type="button" class="btn">attaque</button>
             <button onclick="jouer(Action.attaqueSpe)" type="button" class="btn">attaque spé</button>
@@ -74,7 +74,7 @@
         </div>
     </div>
     <div class="card-deck">
-        <div class="card border-danger">
+        <div class="card border-danger shadow">
             <h5 class="card-header text-center border-danger"></h5>
             <div class="card-body">
                 <ul>
@@ -91,7 +91,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card border-danger">
+        <div class="card border-danger shadow">
             <h5 class="card-header text-center border-danger"></h5>
             <div class="card-body">
                 <ul>
@@ -108,7 +108,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card border-danger">
+        <div class="card border-danger shadow">
             <h5 class="card-header text-center border-danger"></h5>
             <div class="card-body">
                 <ul>

@@ -177,7 +177,7 @@ function afficherPokemonCard(card, pokemon){
     baliseActuel.eq(4).html(pokemon.special_defense);
 
     if(pokemon.pv<=0){
-        baliseActuel = $(card).removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");
+        baliseActuel = $(card).removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary").removeClass("shadow");
         baliseActuel.removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");
         baliseActuel = baliseActuel.children();
         baliseActuel.removeClass("border-" + joueurs[0].color).removeClass("border-" + joueurs[1].color).addClass("border-secondary");

@@ -23,3 +23,4 @@ La bonne version à évaluer est labellé tagué [v0.3.0-alpha](https://github.c
 - Bug fixé :
     - Le level du joueur n'était pas prie en compte dans le pokédex
     - Les nouveaux joueurs n'avaient pas d'énergie maitrisée
+    - Les indicateurs du caroussel ne fonctionnaient pas
